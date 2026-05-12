@@ -35,8 +35,9 @@
   --color-eco: var(--eco);
   --color-ink: var(--ink);
   --font-display: "Playfair Display", "Cormorant Garamond", serif;
+  --font-hero: "Cormorant Garamond", "Playfair Display", serif;
   --font-body: "Outfit", "Inter", system-ui, sans-serif;
-  --font-script: "Dancing Script", cursive;
+  --font-script: "Kaushan Script", "Dancing Script", cursive;
 }
 
 :root {
