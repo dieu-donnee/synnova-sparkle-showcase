@@ -94,6 +94,7 @@
 
 @layer utilities {
   .font-display { font-family: var(--font-display); }
+  .font-hero    { font-family: var(--font-hero); font-feature-settings: "liga", "dlig", "swsh"; }
   .font-script  { font-family: var(--font-script); }
   .text-balance { text-wrap: balance; }
   .text-gradient-rose {
