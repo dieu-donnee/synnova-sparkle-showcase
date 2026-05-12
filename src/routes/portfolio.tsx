@@ -8,6 +8,12 @@ import festival from "@/assets/synnova-festival.jpg";
 import portrait from "@/assets/synnova-portrait-2.jpg";
 import hero from "@/assets/synnova-hero.jpg";
 import grandpopo from "@/assets/synnova-grandpopo.jpg";
+import tradition from "@/assets/synnova-tradition.jpg";
+import event from "@/assets/synnova-event.jpg";
+import benin from "@/assets/synnova-benin.jpg";
+import unicef from "@/assets/synnova-unicef.jpg";
+import studio from "@/assets/synnova-studio.jpg";
+import studio2 from "@/assets/synnova-studio-2.jpg";
 import { Reveal } from "@/components/Reveal";
 
 export const Route = createFileRoute("/portfolio")({
