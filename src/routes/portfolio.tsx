@@ -33,12 +33,18 @@ type Cat = "Tous" | "Événements" | "Cinéma" | "Communication" | "Entrepreneur
 const ITEMS: { img: string; cat: Exclude<Cat, "Tous">; title: string; meta: string; tall?: boolean }[] = [
   { img: festival, cat: "Événements", title: "Festival International des Arts du Bénin", meta: "Animatrice live · Régisseuse" },
   { img: animation, cat: "Événements", title: "Animation scène", meta: "Soirée culturelle · Grand-Popo", tall: true },
-  { img: cinema, cat: "Cinéma", title: "Sur le plateau", meta: "Actrice & régie", tall: true },
-  { img: comm, cat: "Communication", title: "Création de contenu", meta: "Stratégie digitale" },
-  { img: eco, cat: "Entrepreneuriat", title: "Emballages biodégradables", meta: "Confection artisanale", tall: true },
+  { img: cinema, cat: "Cinéma", title: "Salle de projection", meta: "Festival · Spectatrice & jury" },
+  { img: comm, cat: "Communication", title: "Prise de parole publique", meta: "Conférence institutionnelle", tall: true },
+  { img: eco, cat: "Entrepreneuriat", title: "Tradition & nature", meta: "Identité visuelle éco-responsable", tall: true },
   { img: portrait, cat: "Communication", title: "Image de marque", meta: "Direction artistique perso" },
-  { img: hero, cat: "Cinéma", title: "Portrait éditorial", meta: "Captation studio" },
-  { img: grandpopo, cat: "Événements", title: "Grand-Popo", meta: "UReport · Engagement local" },
+  { img: hero, cat: "Communication", title: "Portrait éditorial", meta: "Captation studio" },
+  { img: grandpopo, cat: "Événements", title: "Journée de salubrité — UReport Grand-Popo", meta: "Mobilisation citoyenne" },
+  { img: tradition, cat: "Cinéma", title: "Costume traditionnel", meta: "Captation studio · Patrimoine" },
+  { img: event, cat: "Événements", title: "Soirée de gala", meta: "Cérémonie officielle" },
+  { img: benin, cat: "Événements", title: "Fierté nationale", meta: "Célébration Bénin", tall: true },
+  { img: unicef, cat: "Communication", title: "Journée Mondiale de l'Enfance", meta: "UReport × UNICEF" },
+  { img: studio, cat: "Communication", title: "Studio · Profil corporate", meta: "Portrait éditorial" },
+  { img: studio2, cat: "Cinéma", title: "Studio · Pose éditoriale", meta: "Direction artistique" },
 ];
 
 const CATEGORIES: Cat[] = ["Tous", "Événements", "Cinéma", "Communication", "Entrepreneuriat"];
