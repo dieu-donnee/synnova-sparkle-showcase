@@ -40,8 +40,8 @@ function Home() {
               Grand-Popo · Bénin
             </p>
             <p className="mt-6 font-script text-4xl text-[color:var(--gold)] md:text-5xl">Bonjour, je suis</p>
-            <h1 className="mt-2 font-display text-[clamp(3.5rem,11vw,9rem)] font-semibold leading-[0.92] tracking-tighter text-balance">
-              Synno<span className="italic text-[color:var(--gold)]">v</span>a<span className="text-primary">.</span>
+            <h1 className="mt-2 font-hero text-[clamp(4rem,12vw,10rem)] font-medium italic leading-[0.88] tracking-tight text-balance">
+              Synno<span className="not-italic text-[color:var(--gold)]">v</span>a<span className="not-italic text-primary">.</span>
             </h1>
             <p className="mt-6 max-w-xl text-balance text-base text-secondary-foreground/80 md:text-lg">
               Animatrice · Communicatrice · Actrice · Entrepreneuse sociale.

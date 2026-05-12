@@ -35,8 +35,9 @@
   --color-eco: var(--eco);
   --color-ink: var(--ink);
   --font-display: "Playfair Display", "Cormorant Garamond", serif;
+  --font-hero: "Cormorant Garamond", "Playfair Display", serif;
   --font-body: "Outfit", "Inter", system-ui, sans-serif;
-  --font-script: "Dancing Script", cursive;
+  --font-script: "Kaushan Script", "Dancing Script", cursive;
 }
 
 :root {
@@ -93,6 +94,7 @@
 
 @layer utilities {
   .font-display { font-family: var(--font-display); }
+  .font-hero    { font-family: var(--font-hero); font-feature-settings: "liga", "dlig", "swsh"; }
   .font-script  { font-family: var(--font-script); }
   .text-balance { text-wrap: balance; }
   .text-gradient-rose {
