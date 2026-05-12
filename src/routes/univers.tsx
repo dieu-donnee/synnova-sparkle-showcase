@@ -110,13 +110,40 @@ function Univers() {
             <section
               key={u.id}
               id={u.id}
-              className="relative scroll-mt-24 px-5 py-24 md:px-10 md:py-32"
-              style={{ background: i % 2 === 0 ? "transparent" : "color-mix(in oklab, var(--accent) 25%, var(--background))" }}
+              className="relative scroll-mt-24 overflow-hidden px-5 py-24 md:px-10 md:py-32"
+              style={{
+                background:
+                  u.color === "eco"
+                    ? "linear-gradient(135deg, color-mix(in oklab, var(--eco) 12%, var(--background)) 0%, color-mix(in oklab, var(--eco) 22%, var(--background)) 100%)"
+                    : i % 2 === 0
+                    ? "transparent"
+                    : "color-mix(in oklab, var(--accent) 25%, var(--background))",
+              }}
             >
-              <div className={`mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-12 md:gap-16 ${reverse ? "md:[&>div:first-child]:order-2" : ""}`}>
+              {u.color === "eco" && (
+                <>
+                  <div
+                    className="pointer-events-none absolute -top-24 -right-24 h-96 w-96 rounded-full opacity-40 blur-3xl"
+                    style={{ background: "color-mix(in oklab, var(--eco) 60%, transparent)" }}
+                    aria-hidden
+                  />
+                  <div
+                    className="pointer-events-none absolute -bottom-32 -left-24 h-[28rem] w-[28rem] rounded-full opacity-30 blur-3xl"
+                    style={{ background: "color-mix(in oklab, var(--gold) 50%, transparent)" }}
+                    aria-hidden
+                  />
+                  <span className="pointer-events-none absolute right-8 top-10 select-none font-script text-7xl text-[color:var(--eco)]/25 md:text-8xl" aria-hidden>
+                    🌿
+                  </span>
+                </>
+              )}
+              <div className={`relative mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-12 md:gap-16 ${reverse ? "md:[&>div:first-child]:order-2" : ""}`}>
                 <Reveal className="md:col-span-6">
                   <div className="relative">
-                    <div className="overflow-hidden rounded-[2rem] shadow-xl">
+                    <div
+                      className="overflow-hidden rounded-[2rem] shadow-xl"
+                      style={u.color === "eco" ? { boxShadow: "0 30px 60px -20px color-mix(in oklab, var(--eco) 45%, transparent)" } : undefined}
+                    >
                       <img src={u.img} alt={u.title} loading="lazy" width={1024} height={1280} className="aspect-[4/5] w-full object-cover transition-transform duration-1000 hover:scale-105" />
                     </div>
                     <span
