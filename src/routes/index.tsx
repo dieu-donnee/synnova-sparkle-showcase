@@ -29,11 +29,11 @@ function Home() {
   return (
     <>
       {/* ============== HERO ============== */}
-      <section className="relative min-h-[100svh] overflow-hidden bg-secondary text-secondary-foreground">
+      <section className="relative h-[100svh] overflow-hidden bg-secondary text-secondary-foreground">
         <div className="absolute inset-0 bg-mesh-rose opacity-60" aria-hidden />
         <div className="absolute inset-0 grain" aria-hidden />
 
-        <div className="relative mx-auto grid min-h-[100svh] max-w-7xl grid-cols-1 items-center gap-12 px-5 pb-20 pt-32 md:grid-cols-12 md:px-10 md:pt-36">
+        <div className="relative mx-auto grid h-full max-w-7xl grid-cols-1 items-center gap-8 px-5 pb-16 pt-24 md:grid-cols-12 md:gap-12 md:px-10 md:pt-28">
           <div className="md:col-span-7 animate-fade-up">
             <p className="flex items-center gap-3 text-xs uppercase tracking-[0.35em] text-[color:var(--gold)]">
               <span className="h-px w-10 bg-[color:var(--gold)]" />
@@ -94,9 +94,9 @@ function Home() {
           </div>
         </div>
 
-        {/* Marquee */}
-        <div className="relative border-t border-secondary-foreground/15 bg-secondary py-5">
-          <div className="flex animate-marquee whitespace-nowrap gap-12 font-display text-2xl text-secondary-foreground/70 md:text-3xl">
+        {/* Marquee — bottom overlay so hero stays exactly 100vh */}
+        <div className="absolute inset-x-0 bottom-0 border-t border-secondary-foreground/15 bg-secondary/80 py-4 backdrop-blur-sm">
+          <div className="flex animate-marquee whitespace-nowrap gap-12 font-display text-xl text-secondary-foreground/70 md:text-2xl">
             {Array.from({ length: 2 }).map((_, i) => (
               <div key={i} className="flex gap-12">
                 {[
