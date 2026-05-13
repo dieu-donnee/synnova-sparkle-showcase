@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://synnova-sparkle-showcase.lovable.app/sitemap.xml
