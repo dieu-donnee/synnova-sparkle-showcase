@@ -74,8 +74,8 @@ function Home() {
             </div>
           </div>
 
-          <div className="relative md:col-span-5">
-            <div className="relative mx-auto aspect-[3/4] w-full max-w-md overflow-hidden rounded-[2rem] shadow-2xl">
+          <div className="relative md:col-span-5 flex items-center justify-center h-full">
+            <div className="relative mx-auto aspect-[3/4] w-full max-w-sm md:max-w-full md:h-[min(70vh,560px)] overflow-hidden rounded-[2rem] shadow-2xl">
               <img
                 src={heroImg}
                 alt="Portrait de Synnova Tocloe"

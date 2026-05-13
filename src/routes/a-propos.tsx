@@ -70,8 +70,8 @@ function APropos() {
               Je ne suis pas un CV. Je suis un parcours, fait de rencontres, de plateaux, de micros, d'ateliers et de convictions. Voici comment tout s'enchaîne — et pourquoi.
             </p>
           </div>
-          <div className="md:col-span-5">
-            <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl shadow-2xl">
+          <div className="md:col-span-5 flex md:justify-end">
+            <div className="relative mx-auto aspect-[4/5] w-full max-w-sm md:max-w-none md:w-full md:h-[min(72vh,620px)] overflow-hidden rounded-3xl shadow-2xl">
               <img src={hero} alt="Synnova Tocloe" width={1080} height={1440} className="h-full w-full object-cover" />
             </div>
           </div>
