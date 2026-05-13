@@ -22,7 +22,12 @@ export const Route = createFileRoute("/portfolio")({
       { title: "Portfolio — Synnova Tocloe, événements, cinéma, projets" },
       { name: "description", content: "Galerie des réalisations de Synnova Tocloe : événements, cinéma, communication, entrepreneuriat éco. Festival des Arts du Bénin, UReport Grand-Popo et plus." },
       { property: "og:title", content: "Portfolio — Synnova Tocloe" },
+      { property: "og:description", content: "Galerie de réalisations : événements, cinéma, communication digitale et entrepreneuriat éco-responsable au Bénin." },
       { property: "og:image", content: festival },
+      { property: "og:url", content: "https://synnova-sparkle-showcase.lovable.app/portfolio" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://synnova-sparkle-showcase.lovable.app/portfolio" },
     ],
   }),
   component: Portfolio,
@@ -101,6 +106,7 @@ function Portfolio() {
       {/* GRID */}
       <section className="px-5 py-12 md:px-10 md:py-16">
         <div className="mx-auto max-w-7xl">
+          <h2 className="sr-only">Sélection de projets</h2>
           <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-5 lg:grid-cols-4">
             {list.map((item, i) => (
               <Reveal

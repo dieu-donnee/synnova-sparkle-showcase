@@ -15,6 +15,10 @@ export const Route = createFileRoute("/contact")({
       { name: "description", content: "Contactez Synnova Tocloe pour une animation, une collaboration cinéma, une mission de communication digitale ou les emballages biodégradables." },
       { property: "og:title", content: "Contact — Synnova Tocloe" },
       { property: "og:description", content: "Travaillons ensemble : animation, cinéma, communication, éco-emballages." },
+      { property: "og:url", content: "https://synnova-sparkle-showcase.lovable.app/contact" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://synnova-sparkle-showcase.lovable.app/contact" },
     ],
   }),
   component: Contact,
@@ -77,7 +81,9 @@ function Contact() {
 
       {/* FORM + INFO */}
       <section className="px-5 py-20 md:px-10 md:py-28">
-        <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-5">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="sr-only">Formulaire de contact et coordonnées</h2>
+          <div className="grid gap-12 md:grid-cols-5">
           {/* Form */}
           <Reveal className="md:col-span-3">
             {status === "ok" ? (
@@ -172,6 +178,7 @@ function Contact() {
               </p>
             </div>
           </Reveal>
+          </div>
         </div>
       </section>
     </>

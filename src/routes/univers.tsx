@@ -15,6 +15,10 @@ export const Route = createFileRoute("/univers")({
       { property: "og:title", content: "Mes univers — Synnova Tocloe" },
       { property: "og:description", content: "Quatre mondes, une même énergie." },
       { property: "og:image", content: animation },
+      { property: "og:url", content: "https://synnova-sparkle-showcase.lovable.app/univers" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://synnova-sparkle-showcase.lovable.app/univers" },
     ],
   }),
   component: Univers,
