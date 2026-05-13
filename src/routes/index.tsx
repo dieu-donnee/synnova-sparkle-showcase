@@ -94,9 +94,9 @@ function Home() {
           </div>
         </div>
 
-        {/* Marquee */}
-        <div className="relative border-t border-secondary-foreground/15 bg-secondary py-5">
-          <div className="flex animate-marquee whitespace-nowrap gap-12 font-display text-2xl text-secondary-foreground/70 md:text-3xl">
+        {/* Marquee — bottom overlay so hero stays exactly 100vh */}
+        <div className="absolute inset-x-0 bottom-0 border-t border-secondary-foreground/15 bg-secondary/80 py-4 backdrop-blur-sm">
+          <div className="flex animate-marquee whitespace-nowrap gap-12 font-display text-xl text-secondary-foreground/70 md:text-2xl">
             {Array.from({ length: 2 }).map((_, i) => (
               <div key={i} className="flex gap-12">
                 {[
