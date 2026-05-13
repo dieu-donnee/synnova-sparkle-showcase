@@ -11,7 +11,7 @@ import { FACETS, SOCIALS } from "@/lib/synnova";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Synnova Tocloe — Animatrice & Communicatrice à Grand-Popo, Bénin" },
+      { title: "Synnova Tocloe — Animatrice & Communicatrice au Bénin" },
       {
         name: "description",
         content:
@@ -20,6 +20,31 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Synnova Tocloe — Une femme en chemin" },
       { property: "og:description", content: "Animatrice · Communicatrice · Actrice · Entrepreneuse sociale." },
       { property: "og:image", content: heroImg },
+      { property: "og:url", content: "https://synnova-sparkle-showcase.lovable.app/" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://synnova-sparkle-showcase.lovable.app/" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: "Synnova Belvine Kybarance Tocloe",
+          alternateName: "Synnova Tocloe",
+          jobTitle: "Animatrice, Communicatrice, Actrice, Entrepreneuse sociale",
+          url: "https://synnova-sparkle-showcase.lovable.app/",
+          image: "https://synnova-sparkle-showcase.lovable.app" + heroImg,
+          address: { "@type": "PostalAddress", addressLocality: "Grand-Popo", addressCountry: "BJ" },
+          sameAs: [
+            "https://facebook.com/synnovalumiere",
+            "https://tiktok.com/@_synnova",
+            "https://instagram.com/_synnova",
+            "https://bj.linkedin.com/in/synnova-belvine-kybarance-tocloe-3882a9232",
+          ],
+        }),
+      },
     ],
   }),
   component: Home,
@@ -42,6 +67,7 @@ function Home() {
             <p className="mt-6 font-script text-4xl text-[color:var(--gold)] md:text-5xl">Bonjour, je suis</p>
             <h1 className="mt-2 font-hero text-[clamp(4rem,12vw,10rem)] font-medium italic leading-[0.88] tracking-tight text-balance">
               Synno<span className="not-italic text-[color:var(--gold)]">v</span>a<span className="not-italic text-primary">.</span>
+              <span className="sr-only"> — Animatrice & Communicatrice au Bénin</span>
             </h1>
             <p className="mt-6 max-w-xl text-balance text-base text-secondary-foreground/80 md:text-lg">
               Animatrice · Communicatrice · Actrice · Entrepreneuse sociale.
@@ -81,6 +107,7 @@ function Home() {
                 alt="Portrait de Synnova Tocloe"
                 width={1080}
                 height={1440}
+                fetchPriority="high"
                 className="h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-secondary/70 via-transparent to-transparent" />

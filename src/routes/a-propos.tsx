@@ -15,6 +15,10 @@ export const Route = createFileRoute("/a-propos")({
       { property: "og:title", content: "L'histoire de Synnova Tocloe" },
       { property: "og:description", content: "Formation, engagement, cinéma, entrepreneuriat — une femme en chemin." },
       { property: "og:image", content: portrait },
+      { property: "og:url", content: "https://synnova-sparkle-showcase.lovable.app/a-propos" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://synnova-sparkle-showcase.lovable.app/a-propos" },
     ],
   }),
   component: APropos,

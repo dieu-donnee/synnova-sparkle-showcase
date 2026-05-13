@@ -70,7 +70,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:locale", content: "fr_FR" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Synnova Tocloe — Animatrice & Communicatrice au Bénin" },
-      { name: "description", content: "Synnova's Vibrant Sphere is a personal branding website showcasing a public figure's diverse talents and social impact." },
       { name: "twitter:description", content: "Synnova's Vibrant Sphere is a personal branding website showcasing a public figure's diverse talents and social impact." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d3a5d4e5-278d-4e4c-bbbf-8e288b5c51e9/id-preview-e5bf50eb--3befa3ee-63fd-439f-b2e3-dd761a1f7915.lovable.app-1778544945298.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d3a5d4e5-278d-4e4c-bbbf-8e288b5c51e9/id-preview-e5bf50eb--3befa3ee-63fd-439f-b2e3-dd761a1f7915.lovable.app-1778544945298.png" },
