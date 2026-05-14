@@ -57,6 +57,13 @@ const ITEMS: { img: string; cat: Exclude<Cat, "Tous">; title: string; meta: stri
   { img: unicef, cat: "Communication", title: "Journée Mondiale de l'Enfance", meta: "UReport × UNICEF" },
   { img: studio, cat: "Communication", title: "Studio · Profil corporate", meta: "Portrait éditorial" },
   { img: studio2, cat: "Cinéma", title: "Studio · Pose éditoriale", meta: "Direction artistique" },
+  { img: collecteKits, cat: "Événements", title: "Collecte de kits scolaires", meta: "Grand-Popo & Adjarra Honvié · 100 écoliers", tall: true },
+  { img: donVillage, cat: "Événements", title: "Distribution aux familles", meta: "Action solidaire en village" },
+  { img: unicefAeroport, cat: "Communication", title: "Journée Mondiale de l'Enfance", meta: "UNICEF × Aéroport de Cotonou" },
+  { img: portraitStudio, cat: "Communication", title: "Portrait studio · Plumes", meta: "Direction artistique éditoriale", tall: true },
+  { img: noirBlanc, cat: "Communication", title: "Portrait noir & blanc", meta: "Street style · Cotonou" },
+  { img: jardin, cat: "Communication", title: "Au jardin", meta: "Captation lifestyle" },
+  { img: paysage, cat: "Entrepreneuriat", title: "Nature & territoire", meta: "Inspiration éco-responsable" },
 ];
 
 const CATEGORIES: Cat[] = ["Tous", "Événements", "Cinéma", "Communication", "Entrepreneuriat"];
