@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Sparkles } from "lucide-react";
+import { Star, Sparks, Flash, Heart, Mic, Camera } from "iconoir-react";
+import { GranimCanvas } from "@/components/GranimCanvas";
 import heroImg from "@/assets/synnova-hero.jpg";
 import portrait2 from "@/assets/synnova-portrait-2.jpg";
 import animationImg from "@/assets/synnova-animation.jpg";
