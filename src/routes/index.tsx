@@ -123,43 +123,47 @@ function Home() {
           </div>
         </div>
 
-        {/* Marquee — bottom overlay so hero stays exactly 100vh */}
-        <div className="absolute inset-x-3 bottom-3 md:inset-x-6 md:bottom-6 overflow-hidden rounded-2xl border border-[color:var(--gold)]/30 bg-black py-4 shadow-[0_0_40px_-8px_color-mix(in_oklab,var(--gold)_60%,transparent),0_0_80px_-20px_color-mix(in_oklab,var(--primary)_50%,transparent)] ring-1 ring-[color:var(--gold)]/20">
+        {/* Marquee — full-width bottom band, hero stays exactly 100vh */}
+        <div className="absolute inset-x-0 bottom-0 overflow-hidden rounded-[5px] border border-[color:var(--gold)]/30 bg-black py-4 shadow-[0_0_40px_-8px_color-mix(in_oklab,var(--gold)_60%,transparent),0_0_80px_-20px_color-mix(in_oklab,var(--primary)_50%,transparent)] ring-1 ring-[color:var(--gold)]/20">
+          <GranimCanvas className="pointer-events-none absolute inset-0 h-full w-full opacity-70" />
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,color-mix(in_oklab,var(--gold)_18%,transparent),transparent_70%)]" aria-hidden />
           <div className="relative flex animate-marquee whitespace-nowrap gap-10 font-blackops text-lg uppercase text-white md:text-xl">
-            {Array.from({ length: 2 }).map((_, i) => (
-              <div key={i} className="flex items-center gap-10">
-                {[
-                  "Animatrice",
-                  "icon",
-                  "Communicatrice",
-                  "icon",
-                  "Actrice",
-                  "icon",
-                  "Entrepreneuse sociale",
-                  "icon",
-                  "UReport Grand-Popo",
-                  "icon",
-                  "Festival des Arts du Bénin",
-                  "icon",
-                ].map((t, j) =>
-                  t === "icon" ? (
-                    <Sparkles
-                      key={`${i}-${j}`}
-                      className="h-4 w-4 shrink-0 text-[color:var(--gold)] drop-shadow-[0_0_8px_color-mix(in_oklab,var(--gold)_70%,transparent)]"
-                      aria-hidden
-                    />
-                  ) : (
-                    <span
-                      key={`${i}-${j}`}
-                      className="text-white drop-shadow-[0_0_10px_color-mix(in_oklab,var(--gold)_45%,transparent)]"
-                    >
-                      {t}
-                    </span>
-                  )
-                )}
-              </div>
-            ))}
+            {Array.from({ length: 2 }).map((_, i) => {
+              const items: Array<{ type: "text"; value: string } | { type: "icon"; Icon: typeof Star }> = [
+                { type: "text", value: "Animatrice" },
+                { type: "icon", Icon: Microphone },
+                { type: "text", value: "Communicatrice" },
+                { type: "icon", Icon: Sparks },
+                { type: "text", value: "Actrice" },
+                { type: "icon", Icon: Camera },
+                { type: "text", value: "Entrepreneuse sociale" },
+                { type: "icon", Icon: Heart },
+                { type: "text", value: "UReport Grand-Popo" },
+                { type: "icon", Icon: Flash },
+                { type: "text", value: "Festival des Arts du Bénin" },
+                { type: "icon", Icon: Star },
+              ];
+              return (
+                <div key={i} className="flex items-center gap-10">
+                  {items.map((it, j) =>
+                    it.type === "icon" ? (
+                      <it.Icon
+                        key={`${i}-${j}`}
+                        className="h-5 w-5 shrink-0 text-[color:var(--gold)] drop-shadow-[0_0_8px_color-mix(in_oklab,var(--gold)_70%,transparent)]"
+                        aria-hidden
+                      />
+                    ) : (
+                      <span
+                        key={`${i}-${j}`}
+                        className="text-white drop-shadow-[0_0_10px_color-mix(in_oklab,var(--gold)_45%,transparent)]"
+                      >
+                        {it.value}
+                      </span>
+                    )
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
