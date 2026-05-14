@@ -14,6 +14,13 @@ import benin from "@/assets/synnova-benin.jpg";
 import unicef from "@/assets/synnova-unicef.jpg";
 import studio from "@/assets/synnova-studio.jpg";
 import studio2 from "@/assets/synnova-studio-2.jpg";
+import donVillage from "@/assets/synnova-don-village.webp";
+import jardin from "@/assets/synnova-jardin.jpg";
+import unicefAeroport from "@/assets/synnova-unicef-aeroport.jpg";
+import paysage from "@/assets/synnova-paysage.jpg";
+import portraitStudio from "@/assets/synnova-portrait-studio.jpg";
+import noirBlanc from "@/assets/synnova-noir-blanc.jpg";
+import collecteKits from "@/assets/synnova-collecte-kits.webp";
 import { Reveal } from "@/components/Reveal";
 
 export const Route = createFileRoute("/portfolio")({
