@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { Sparkles } from "lucide-react";
 import heroImg from "@/assets/synnova-hero.jpg";
 import portrait2 from "@/assets/synnova-portrait-2.jpg";
 import animationImg from "@/assets/synnova-animation.jpg";
