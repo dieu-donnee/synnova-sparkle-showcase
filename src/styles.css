@@ -96,6 +96,7 @@
   .font-display { font-family: var(--font-display); }
   .font-hero    { font-family: var(--font-hero); font-feature-settings: "liga", "dlig", "swsh"; }
   .font-script  { font-family: var(--font-script); }
+  .font-blackops { font-family: "Black Ops One", system-ui, sans-serif; letter-spacing: 0.08em; }
   .text-balance { text-wrap: balance; }
   .text-gradient-rose {
     background: linear-gradient(120deg, var(--primary) 0%, var(--gold) 100%);
