@@ -42,30 +42,30 @@
 
 :root {
   --radius: 0.75rem;
-  /* Synnova brand */
-  --background: oklch(0.99 0.005 90);          /* #FAFAFA pure white */
-  --foreground: oklch(0.18 0.04 280);          /* deep ink */
-  --ink: oklch(0.22 0.08 285);                 /* indigo nuit #1A237E-ish */
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.18 0.04 280);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.18 0.04 280);
-  --primary: oklch(0.52 0.18 357);             /* rose principal #C2185B */
-  --primary-foreground: oklch(0.99 0.005 90);
-  --secondary: oklch(0.28 0.12 280);           /* indigo nuit */
-  --secondary-foreground: oklch(0.99 0.005 90);
-  --muted: oklch(0.96 0.01 340);
-  --muted-foreground: oklch(0.45 0.04 290);
-  --accent: oklch(0.92 0.06 350);              /* rose clair #F8BBD0 */
-  --accent-foreground: oklch(0.22 0.08 285);
-  --rose-soft: oklch(0.92 0.06 350);
-  --gold: oklch(0.78 0.16 80);                 /* or africain #F9A825 */
-  --eco: oklch(0.42 0.13 145);                 /* vert nature #1B5E20 */
-  --destructive: oklch(0.55 0.22 27);
-  --destructive-foreground: oklch(0.99 0.005 90);
-  --border: oklch(0.92 0.02 340);
-  --input: oklch(0.92 0.02 340);
-  --ring: oklch(0.52 0.18 357);
+  /* Synnova brand — Noir & Or */
+  --background: oklch(0.16 0 0);               /* #0d0d0d noir profond */
+  --foreground: oklch(0.96 0.01 90);           /* off-white */
+  --ink: oklch(0.12 0 0);                      /* noir absolu */
+  --card: oklch(0.22 0 0);                     /* #1a1a1a carte */
+  --card-foreground: oklch(0.96 0.01 90);
+  --popover: oklch(0.22 0 0);
+  --popover-foreground: oklch(0.96 0.01 90);
+  --primary: oklch(0.78 0.13 85);              /* or #c9a84c */
+  --primary-foreground: oklch(0.14 0 0);
+  --secondary: oklch(0.22 0 0);                /* noir charbon */
+  --secondary-foreground: oklch(0.96 0.01 90);
+  --muted: oklch(0.26 0 0);
+  --muted-foreground: oklch(0.72 0.03 85);
+  --accent: oklch(0.88 0.10 90);               /* or clair #f0d78c */
+  --accent-foreground: oklch(0.14 0 0);
+  --rose-soft: oklch(0.88 0.10 90);
+  --gold: oklch(0.80 0.14 85);                 /* or signature */
+  --eco: oklch(0.78 0.13 85);                  /* aligné or */
+  --destructive: oklch(0.6 0.22 27);
+  --destructive-foreground: oklch(0.96 0.01 90);
+  --border: oklch(0.32 0.02 85);
+  --input: oklch(0.28 0.01 85);
+  --ring: oklch(0.78 0.13 85);
 }
 
 @layer base {
