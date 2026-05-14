@@ -123,28 +123,40 @@ function Home() {
         </div>
 
         {/* Marquee — bottom overlay so hero stays exactly 100vh */}
-        <div className="absolute inset-x-0 bottom-0 border-t border-secondary-foreground/15 bg-secondary/80 py-4 backdrop-blur-sm">
-          <div className="flex animate-marquee whitespace-nowrap gap-12 font-display text-xl text-secondary-foreground/70 md:text-2xl">
+        <div className="absolute inset-x-3 bottom-3 md:inset-x-6 md:bottom-6 overflow-hidden rounded-2xl border border-[color:var(--gold)]/30 bg-black py-4 shadow-[0_0_40px_-8px_color-mix(in_oklab,var(--gold)_60%,transparent),0_0_80px_-20px_color-mix(in_oklab,var(--primary)_50%,transparent)] ring-1 ring-[color:var(--gold)]/20">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,color-mix(in_oklab,var(--gold)_18%,transparent),transparent_70%)]" aria-hidden />
+          <div className="relative flex animate-marquee whitespace-nowrap gap-10 font-blackops text-lg uppercase text-white md:text-xl">
             {Array.from({ length: 2 }).map((_, i) => (
-              <div key={i} className="flex gap-12">
+              <div key={i} className="flex items-center gap-10">
                 {[
                   "Animatrice",
-                  "✦",
+                  "icon",
                   "Communicatrice",
-                  "✦",
+                  "icon",
                   "Actrice",
-                  "✦",
+                  "icon",
                   "Entrepreneuse sociale",
-                  "✦",
+                  "icon",
                   "UReport Grand-Popo",
-                  "✦",
+                  "icon",
                   "Festival des Arts du Bénin",
-                  "✦",
-                ].map((t, j) => (
-                  <span key={`${i}-${j}`} className={t === "✦" ? "text-[color:var(--gold)]" : ""}>
-                    {t}
-                  </span>
-                ))}
+                  "icon",
+                ].map((t, j) =>
+                  t === "icon" ? (
+                    <Sparkles
+                      key={`${i}-${j}`}
+                      className="h-4 w-4 shrink-0 text-[color:var(--gold)] drop-shadow-[0_0_8px_color-mix(in_oklab,var(--gold)_70%,transparent)]"
+                      aria-hidden
+                    />
+                  ) : (
+                    <span
+                      key={`${i}-${j}`}
+                      className="text-white drop-shadow-[0_0_10px_color-mix(in_oklab,var(--gold)_45%,transparent)]"
+                    >
+                      {t}
+                    </span>
+                  )
+                )}
               </div>
             ))}
           </div>
