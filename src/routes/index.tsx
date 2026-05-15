@@ -55,72 +55,96 @@ export const Route = createFileRoute("/")({
 function Home() {
   return (
     <>
-      {/* ============== HERO ============== */}
-      <section className="relative h-[100svh] overflow-hidden bg-secondary text-secondary-foreground">
-        <div className="absolute inset-0 bg-mesh-rose opacity-60" aria-hidden />
-        <div className="absolute inset-0 grain" aria-hidden />
+      {/* ============== HERO — Architect editorial ============== */}
+      <section className="relative h-[100svh] min-h-[680px] overflow-hidden bg-ink text-secondary-foreground">
+        {/* Full-bleed professional photo as background */}
+        <img
+          src={heroImg}
+          alt="Portrait de Synnova Tocloe"
+          width={1920}
+          height={1280}
+          fetchPriority="high"
+          className="absolute inset-0 h-full w-full object-cover object-[50%_30%] scale-105 animate-fade-in"
+        />
+        {/* Layered overlays for editorial depth */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/30" aria-hidden />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" aria-hidden />
+        <div className="absolute inset-0 grain opacity-60" aria-hidden />
 
-        <div className="relative mx-auto grid h-full max-w-7xl grid-cols-1 items-center gap-8 px-5 pb-16 pt-24 md:grid-cols-12 md:gap-12 md:px-10 md:pt-28">
-          <div className="md:col-span-7 animate-fade-up">
-            <p className="flex items-center gap-3 text-xs uppercase tracking-[0.35em] text-[color:var(--gold)]">
-              <span className="h-px w-10 bg-[color:var(--gold)]" />
-              Grand-Popo · Bénin
-            </p>
-            <p className="mt-6 font-script text-4xl text-[color:var(--gold)] md:text-5xl">Bonjour, je suis</p>
-            <h1 className="mt-2 font-hero text-[clamp(4rem,12vw,10rem)] font-medium italic leading-[0.88] tracking-tight text-balance">
-              Synno<span className="not-italic text-[color:var(--gold)]">v</span>a<span className="not-italic text-primary">.</span>
+        {/* Vertical side label — left */}
+        <div className="pointer-events-none absolute left-5 top-1/2 hidden -translate-y-1/2 md:block">
+          <p className="origin-left -rotate-90 whitespace-nowrap text-[10px] uppercase tracking-[0.5em] text-[color:var(--gold)]/80">
+            Portfolio · 2024 — 2026
+          </p>
+        </div>
+        {/* Vertical side label — right */}
+        <div className="pointer-events-none absolute right-5 top-1/2 hidden -translate-y-1/2 md:block">
+          <p className="origin-right rotate-90 whitespace-nowrap text-[10px] uppercase tracking-[0.5em] text-secondary-foreground/60">
+            Grand-Popo · Bénin · 06°16′N
+          </p>
+        </div>
+
+        {/* Top meta bar */}
+        <div className="absolute inset-x-0 top-24 z-10 px-5 md:px-16">
+          <div className="mx-auto flex max-w-[1400px] items-center justify-between text-[10px] uppercase tracking-[0.4em] text-secondary-foreground/70">
+            <span className="flex items-center gap-3">
+              <span className="h-px w-8 bg-[color:var(--gold)]" />
+              <span className="text-[color:var(--gold)]">N° 001</span>
+              <span>—</span>
+              <span>Une femme en chemin</span>
+            </span>
+            <span className="hidden md:inline">EST. 1998 · BJ</span>
+          </div>
+        </div>
+
+        {/* Main editorial composition */}
+        <div className="relative mx-auto grid h-full max-w-[1400px] grid-cols-12 grid-rows-6 gap-x-6 px-5 pb-32 pt-40 md:px-16 md:pt-48">
+          {/* Massive name — bottom-left, architect style */}
+          <div className="col-span-12 row-start-4 row-span-3 self-end animate-fade-up md:col-span-9">
+            <p className="font-script text-3xl text-[color:var(--gold)] md:text-4xl">Bonjour, je suis</p>
+            <h1 className="mt-1 font-hero text-[clamp(4.5rem,14vw,13rem)] font-medium leading-[0.82] tracking-[-0.04em] text-balance text-white">
+              <span className="block italic">Synnova</span>
+              <span className="block not-italic">
+                Tocloe<span className="text-[color:var(--gold)]">.</span>
+              </span>
               <span className="sr-only"> — Animatrice & Communicatrice au Bénin</span>
             </h1>
-            <p className="mt-6 max-w-xl text-balance text-base text-secondary-foreground/80 md:text-lg">
-              Animatrice · Communicatrice · Actrice · Entrepreneuse sociale.
-              Une femme en chemin, portée par la création, la parole et l'engagement.
-            </p>
-
-            <div className="mt-10 flex flex-wrap items-center gap-4">
-              <Link
-                to="/univers"
-                className="group relative overflow-hidden rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground shadow-[0_20px_50px_-20px_color-mix(in_oklab,var(--primary)_70%,transparent)] transition-transform hover:-translate-y-0.5"
-              >
-                <span className="relative z-10">Découvrir mon univers →</span>
-                <span className="absolute inset-0 -z-0 bg-gradient-to-r from-primary via-[color:var(--gold)] to-primary opacity-0 transition-opacity group-hover:opacity-100" />
-              </Link>
-              <Link
-                to="/contact"
-                className="rounded-full border border-secondary-foreground/30 px-7 py-3.5 text-sm font-medium text-secondary-foreground transition-colors hover:border-[color:var(--gold)] hover:text-[color:var(--gold)]"
-              >
-                Me contacter
-              </Link>
-            </div>
-
-            <div className="mt-14 flex flex-wrap items-center gap-x-8 gap-y-3 text-xs uppercase tracking-[0.25em] text-secondary-foreground/60">
-              <span>Journalisme</span><span>·</span>
-              <span>Animation live</span><span>·</span>
-              <span>Cinéma</span><span>·</span>
-              <span>Régie plateau</span><span>·</span>
-              <span>Comm. digitale</span><span>·</span>
-              <span>Éco-emballages</span>
-            </div>
           </div>
 
-          <div className="relative md:col-span-5 flex items-center justify-center h-full">
-            <div className="relative mx-auto aspect-[3/4] w-full max-w-sm md:max-w-full md:h-[min(70vh,560px)] overflow-hidden rounded-[2rem] shadow-2xl">
-              <img
-                src={heroImg}
-                alt="Portrait de Synnova Tocloe"
-                width={1080}
-                height={1440}
-                fetchPriority="high"
-                className="h-full w-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-secondary/70 via-transparent to-transparent" />
-              <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between rounded-2xl bg-background/15 px-4 py-3 backdrop-blur-md ring-1 ring-white/20">
-                <span className="font-display text-sm">Belvine K. Tocloe</span>
-                <span className="text-xs text-[color:var(--gold)]">@_synnova</span>
+          {/* Right-side editorial paragraph + actions */}
+          <div className="col-span-12 row-start-3 row-span-2 self-end md:col-span-4 md:col-start-9 md:row-start-3 md:row-span-3 animate-fade-up">
+            <div className="border-l border-[color:var(--gold)]/50 pl-5">
+              <p className="text-[10px] uppercase tracking-[0.4em] text-[color:var(--gold)]">À propos</p>
+              <p className="mt-4 max-w-md text-balance text-sm text-secondary-foreground/85 md:text-base">
+                Animatrice · Communicatrice · Actrice · Entrepreneuse sociale.
+                Portée par la création, la parole et l'engagement.
+              </p>
+              <div className="mt-8 flex flex-wrap items-center gap-3">
+                <Link
+                  to="/univers"
+                  className="group inline-flex items-center gap-2 rounded-none border border-[color:var(--gold)] bg-[color:var(--gold)] px-6 py-3 text-xs font-medium uppercase tracking-[0.25em] text-ink transition-all hover:bg-transparent hover:text-[color:var(--gold)]"
+                >
+                  Mon univers
+                  <span className="transition-transform group-hover:translate-x-1">→</span>
+                </Link>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 border border-secondary-foreground/30 px-6 py-3 text-xs font-medium uppercase tracking-[0.25em] text-secondary-foreground transition-colors hover:border-[color:var(--gold)] hover:text-[color:var(--gold)]"
+                >
+                  Contact
+                </Link>
               </div>
             </div>
-            <div className="pointer-events-none absolute -right-6 -top-6 hidden h-32 w-32 animate-float rounded-full bg-[color:var(--gold)]/30 blur-2xl md:block" />
-            <div className="pointer-events-none absolute -bottom-8 -left-6 hidden h-40 w-40 animate-float rounded-full bg-primary/40 blur-2xl md:block" />
           </div>
+        </div>
+
+        {/* Bottom corner index — architect signature */}
+        <div className="pointer-events-none absolute bottom-24 right-5 hidden text-right md:block md:right-16">
+          <p className="text-[10px] uppercase tracking-[0.4em] text-secondary-foreground/50">Index</p>
+          <p className="mt-1 font-display text-3xl text-white">
+            04 <span className="text-[color:var(--gold)]/60">/</span> <span className="text-secondary-foreground/50">04</span>
+          </p>
+          <p className="mt-1 text-[10px] uppercase tracking-[0.3em] text-secondary-foreground/50">Disciplines</p>
         </div>
 
         {/* Marquee — full-width bottom band, hero stays exactly 100vh */}
