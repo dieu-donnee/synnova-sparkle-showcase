@@ -209,37 +209,65 @@ function Home() {
         </div>
       </section>
 
-      {/* ============== FACETS ============== */}
-      <section className="bg-accent/30 px-5 py-24 md:px-10 md:py-32">
-        <div className="mx-auto max-w-7xl">
-          <Reveal className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+      {/* ============== FACETS — Architect numbered grid w/ pro photos ============== */}
+      <section className="bg-background px-5 py-24 md:px-16 md:py-32">
+        <div className="mx-auto max-w-[1400px]">
+          <Reveal className="flex flex-col items-start justify-between gap-6 border-b border-border pb-10 md:flex-row md:items-end">
             <div>
-              <p className="text-xs uppercase tracking-[0.3em] text-primary">Quatre facettes</p>
-              <h2 className="mt-3 font-display text-4xl md:text-6xl">Une femme, plusieurs <em className="text-primary">vies</em>.</h2>
+              <p className="flex items-center gap-3 text-[10px] uppercase tracking-[0.4em] text-[color:var(--gold)]">
+                <span className="h-px w-10 bg-[color:var(--gold)]" />
+                Disciplines · 04
+              </p>
+              <h2 className="mt-5 font-hero text-[clamp(2.5rem,6vw,5.5rem)] font-medium leading-[0.9] tracking-[-0.03em]">
+                <span className="italic">Quatre</span> univers,
+                <span className="block">une signature.</span>
+              </h2>
             </div>
-            <p className="max-w-md text-muted-foreground">
-              De la scène au plateau, du micro à l'atelier — chaque univers est un terrain d'expression et d'engagement.
+            <p className="max-w-md text-sm text-muted-foreground md:text-base">
+              De la scène au plateau, du micro à l'atelier — chaque discipline est un terrain d'expression et d'engagement.
             </p>
           </Reveal>
 
-          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {FACETS.map((f, i) => (
-              <Reveal key={f.slug} delay={i * 100}>
-                <Link
-                  to="/univers"
-                  hash={f.slug}
-                  className="group relative block h-full overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:border-primary hover:shadow-[0_24px_60px_-24px_color-mix(in_oklab,var(--primary)_50%,transparent)]"
-                >
-                  <span className="font-script text-3xl text-primary">0{i + 1}</span>
-                  <h3 className="mt-4 font-display text-2xl">{f.title}</h3>
-                  <p className="mt-1 text-sm italic text-muted-foreground">{f.tagline}</p>
-                  <p className="mt-4 text-sm text-foreground/70">{f.desc}</p>
-                  <span className="mt-6 inline-flex items-center gap-1 text-sm text-primary transition-transform group-hover:translate-x-1">
-                    Explorer →
-                  </span>
-                </Link>
-              </Reveal>
-            ))}
+          <div className="mt-16 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-4">
+            {FACETS.map((f, i) => {
+              const bgs = [animationImg, portrait2, cinemaImg, ecoImg];
+              return (
+                <Reveal key={f.slug} delay={i * 80}>
+                  <Link
+                    to="/univers"
+                    hash={f.slug}
+                    className="group relative block aspect-[3/4] overflow-hidden bg-ink"
+                  >
+                    <img
+                      src={bgs[i]}
+                      alt=""
+                      loading="lazy"
+                      width={800}
+                      height={1066}
+                      className="absolute inset-0 h-full w-full object-cover grayscale transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20 transition-opacity duration-500 group-hover:from-black/95 group-hover:via-black/40" />
+                    <div className="relative flex h-full flex-col justify-between p-6 text-white">
+                      <div className="flex items-start justify-between">
+                        <span className="font-hero text-5xl italic text-[color:var(--gold)]">0{i + 1}</span>
+                        <span className="text-[9px] uppercase tracking-[0.3em] text-white/60">— {f.slug}</span>
+                      </div>
+                      <div>
+                        <h3 className="font-hero text-3xl leading-[0.95]">{f.title}</h3>
+                        <p className="mt-2 text-xs italic text-[color:var(--gold)]/90">{f.tagline}</p>
+                        <p className="mt-4 max-h-0 overflow-hidden text-xs text-white/80 transition-all duration-500 group-hover:max-h-32">
+                          {f.desc}
+                        </p>
+                        <span className="mt-5 inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-white">
+                          <span className="h-px w-6 bg-[color:var(--gold)] transition-all group-hover:w-12" />
+                          Explorer
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>
