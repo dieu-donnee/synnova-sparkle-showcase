@@ -98,11 +98,11 @@ function Home() {
         </div>
 
         {/* Main editorial composition */}
-        <div className="relative mx-auto grid h-full max-w-[1400px] grid-cols-12 grid-rows-6 gap-x-6 px-5 pb-32 pt-40 md:px-16 md:pt-48">
+        <div className="relative mx-auto flex h-full max-w-[1400px] flex-col justify-end gap-10 px-5 pb-32 pt-40 md:grid md:grid-cols-12 md:grid-rows-6 md:gap-x-6 md:px-16 md:pt-48">
           {/* Massive name — bottom-left, architect style */}
-          <div className="col-span-12 row-start-4 row-span-3 self-end animate-fade-up md:col-span-9">
-            <p className="font-script text-3xl text-[color:var(--gold)] md:text-4xl">Bonjour, je suis</p>
-            <h1 className="mt-1 font-hero text-[clamp(4.5rem,14vw,13rem)] font-medium leading-[0.82] tracking-[-0.04em] text-balance text-white">
+          <div className="animate-fade-up md:col-span-8 md:row-start-4 md:row-span-3 md:self-end">
+            <p className="font-script text-2xl text-[color:var(--gold)] md:text-4xl">Bonjour, je suis</p>
+            <h1 className="mt-1 font-hero text-[clamp(3.5rem,14vw,13rem)] font-medium leading-[0.82] tracking-[-0.04em] text-balance text-white">
               <span className="block italic">Synnova</span>
               <span className="block not-italic">
                 Tocloe<span className="text-[color:var(--gold)]">.</span>
@@ -112,7 +112,7 @@ function Home() {
           </div>
 
           {/* Right-side editorial paragraph + actions */}
-          <div className="col-span-12 row-start-3 row-span-2 self-end md:col-span-4 md:col-start-9 md:row-start-3 md:row-span-3 animate-fade-up">
+          <div className="animate-fade-up md:col-span-4 md:col-start-9 md:row-start-4 md:row-span-3 md:self-end">
             <div className="border-l border-[color:var(--gold)]/50 pl-5">
               <p className="text-[10px] uppercase tracking-[0.4em] text-[color:var(--gold)]">À propos</p>
               <p className="mt-4 max-w-md text-balance text-sm text-secondary-foreground/85 md:text-base">
