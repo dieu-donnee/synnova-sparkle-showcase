@@ -2,13 +2,12 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import animation from "@/assets/synnova-animation.jpg";
 import comm from "@/assets/synnova-comm.jpg";
-import cinema from "@/assets/synnova-cinema.jpg";
-import eco from "@/assets/synnova-eco.jpg";
+import cinema from "@/assets/synnova-cinema.jpeg";
+import eco from "@/assets/synnova-eco.jpeg";
 import festival from "@/assets/synnova-festival.jpg";
 import portrait from "@/assets/synnova-portrait-2.jpg";
 import hero from "@/assets/synnova-hero.jpg";
-import grandpopo from "@/assets/synnova-grandpopo.jpg";
-import tradition from "@/assets/synnova-tradition.jpg";
+import grandpopo from "@/assets/synnova-grandpopo.jpeg";
 import event from "@/assets/synnova-event.jpg";
 import benin from "@/assets/synnova-benin.jpg";
 import unicef from "@/assets/synnova-unicef.jpg";
@@ -51,7 +50,7 @@ const ITEMS: { img: string; cat: Exclude<Cat, "Tous">; title: string; meta: stri
   { img: portrait, cat: "Communication", title: "Image de marque", meta: "Direction artistique perso" },
   { img: hero, cat: "Communication", title: "Portrait éditorial", meta: "Captation studio" },
   { img: grandpopo, cat: "Événements", title: "Journée de salubrité — UReport Grand-Popo", meta: "Mobilisation citoyenne" },
-  { img: tradition, cat: "Cinéma", title: "Costume traditionnel", meta: "Captation studio · Patrimoine" },
+  { img: benin, cat: "Cinéma", title: "Costume traditionnel", meta: "Captation studio · Patrimoine" },
   { img: event, cat: "Événements", title: "Soirée de gala", meta: "Cérémonie officielle" },
   { img: benin, cat: "Événements", title: "Fierté nationale", meta: "Célébration Bénin", tall: true },
   { img: unicef, cat: "Communication", title: "Journée Mondiale de l'Enfance", meta: "UReport × UNICEF" },

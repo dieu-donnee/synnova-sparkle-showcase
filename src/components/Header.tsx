@@ -54,6 +54,7 @@ export function Header() {
           ))}
           <Link
             to="/contact"
+            search={{ sujet: undefined }}
             className="rounded-full bg-foreground px-5 py-2 text-sm font-medium text-background transition-all hover:bg-primary hover:shadow-[0_10px_30px_-10px_color-mix(in_oklab,var(--primary)_70%,transparent)]"
           >
             Me contacter
@@ -83,6 +84,7 @@ export function Header() {
             <Link
               key={l.to}
               to={l.to}
+              {...(l.to === "/contact" ? { search: { sujet: undefined } } : {})}
               activeOptions={{ exact: l.to === "/" }}
               activeProps={{ className: "text-primary bg-accent/40" }}
               onClick={() => setOpen(false)}

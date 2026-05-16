@@ -22,7 +22,7 @@ export function Footer() {
             <li><Link to="/a-propos" className="hover:text-[color:var(--gold)]">À propos</Link></li>
             <li><Link to="/univers" className="hover:text-[color:var(--gold)]">Mes univers</Link></li>
             <li><Link to="/portfolio" className="hover:text-[color:var(--gold)]">Portfolio</Link></li>
-            <li><Link to="/contact" className="hover:text-[color:var(--gold)]">Contact</Link></li>
+            <li><Link to="/contact" search={{ sujet: undefined }} className="hover:text-[color:var(--gold)]">Contact</Link></li>
           </ul>
         </div>
 

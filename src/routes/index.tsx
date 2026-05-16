@@ -4,9 +4,9 @@ import { GranimCanvas } from "@/components/GranimCanvas";
 import heroImg from "@/assets/synnova-hero.jpg";
 import portrait2 from "@/assets/synnova-portrait-2.jpg";
 import animationImg from "@/assets/synnova-animation.jpg";
-import cinemaImg from "@/assets/synnova-cinema.jpg";
-import ecoImg from "@/assets/synnova-eco.jpg";
-import grandpopoImg from "@/assets/synnova-grandpopo.jpg";
+import cinemaImg from "@/assets/synnova-cinema.jpeg";
+import ecoImg from "@/assets/synnova-eco.jpeg";
+import grandpopoImg from "@/assets/synnova-grandpopo.jpeg";
 import { Reveal } from "@/components/Reveal";
 import { FACETS, SOCIALS } from "@/lib/synnova";
 
@@ -127,11 +127,12 @@ function Home() {
                   Mon univers
                   <span className="transition-transform group-hover:translate-x-1">→</span>
                 </Link>
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center gap-2 border border-secondary-foreground/30 px-6 py-3 text-xs font-medium uppercase tracking-[0.25em] text-secondary-foreground transition-colors hover:border-[color:var(--gold)] hover:text-[color:var(--gold)]"
-                >
-                  Contact
+              <Link
+                to="/contact"
+                search={{ sujet: undefined }}
+                className="inline-flex items-center gap-2 border border-secondary-foreground/30 px-6 py-3 text-xs font-medium uppercase tracking-[0.25em] text-secondary-foreground transition-colors hover:border-[color:var(--gold)] hover:text-[color:var(--gold)]"
+              >
+                Contact
                 </Link>
               </div>
             </div>

@@ -1,10 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import portrait from "@/assets/synnova-portrait-2.jpg";
 import hero from "@/assets/synnova-hero.jpg";
-import eco from "@/assets/synnova-eco.jpg";
-import cinema from "@/assets/synnova-cinema.jpg";
+import eco from "@/assets/synnova-eco.jpeg";
+import cinema from "@/assets/synnova-cinema.jpeg";
 import comm from "@/assets/synnova-comm.jpg";
-import grandpopo from "@/assets/synnova-grandpopo.jpg";
+import grandpopo from "@/assets/synnova-grandpopo.jpeg";
 import { Reveal } from "@/components/Reveal";
 
 export const Route = createFileRoute("/a-propos")({
@@ -141,7 +141,7 @@ function APropos() {
             <blockquote className="mt-4 font-display text-3xl leading-tight md:text-5xl">
               « Militante pour des changements positifs <span className="text-[color:var(--gold)]">🌞</span> — je crois aux mots, aux gestes, aux femmes. »
             </blockquote>
-            <Link to="/contact" className="mt-8 inline-flex rounded-full bg-foreground px-6 py-3 text-sm text-background hover:bg-primary">
+            <Link to="/contact" search={{ sujet: undefined }} className="mt-8 inline-flex rounded-full bg-foreground px-6 py-3 text-sm text-background hover:bg-primary">
               Travaillons ensemble →
             </Link>
           </Reveal>

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { z } from "zod";
 import { SOCIALS } from "@/lib/synnova";
 import { Reveal } from "@/components/Reveal";
-import grandpopo from "@/assets/synnova-grandpopo.jpg";
+import grandpopo from "@/assets/synnova-grandpopo.jpeg";
 
 export const Route = createFileRoute("/contact")({
   validateSearch: (s: Record<string, unknown>) => ({
