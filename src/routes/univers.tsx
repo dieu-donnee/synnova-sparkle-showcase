@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import animation from "@/assets/synnova-animation.jpg";
 import comm from "@/assets/synnova-comm.jpg";
-import cinema from "@/assets/synnova-cinema.jpg";
-import eco from "@/assets/synnova-eco.jpg";
+import cinema from "@/assets/synnova-cinema.jpeg";
+import eco from "@/assets/synnova-eco.jpeg";
 import festival from "@/assets/synnova-festival.jpg";
 import portrait from "@/assets/synnova-portrait-2.jpg";
 import { Reveal } from "@/components/Reveal";
