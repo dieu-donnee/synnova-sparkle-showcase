@@ -30,11 +30,11 @@ export function Header() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-10">
         <Link to="/" className="group flex items-center gap-2" onClick={() => setOpen(false)}>
-          <span className="grid h-9 w-9 place-items-center rounded-full bg-primary text-primary-foreground font-display text-lg shadow-[0_8px_24px_-8px_color-mix(in_oklab,var(--primary)_60%,transparent)]">
+          <span className="grid h-9 w-9 place-items-center rounded-full bg-primary text-[color:var(--gold)]-foreground font-display text-lg shadow-[0_8px_24px_-8px_color-mix(in_oklab,var(--primary)_60%,transparent)]">
             S
           </span>
           <span className="font-display text-xl tracking-tight">
-            Synnova<span className="text-primary">.</span>
+            Synnova<span className="text-[color:var(--gold)]">.</span>
           </span>
         </Link>
 
@@ -44,8 +44,8 @@ export function Header() {
               key={l.to}
               to={l.to}
               activeOptions={{ exact: l.to === "/" }}
-              activeProps={{ className: "text-primary" }}
-              className="relative text-sm font-medium text-foreground/80 transition-colors hover:text-primary
+              activeProps={{ className: "text-[color:var(--gold)]" }}
+              className="relative text-sm font-medium text-foreground/80 transition-colors hover:text-[color:var(--gold)]
                          after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-primary
                          after:transition-all hover:after:w-full data-[status=active]:after:w-full"
             >
@@ -86,7 +86,7 @@ export function Header() {
               to={l.to}
               {...(l.to === "/contact" ? { search: { sujet: undefined } } : {})}
               activeOptions={{ exact: l.to === "/" }}
-              activeProps={{ className: "text-primary bg-accent/40" }}
+              activeProps={{ className: "text-[color:var(--gold)] bg-accent/40" }}
               onClick={() => setOpen(false)}
               className="rounded-lg px-3 py-3 font-medium text-foreground/80"
             >

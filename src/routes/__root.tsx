@@ -16,7 +16,7 @@ function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <p className="font-script text-3xl text-primary">Oups…</p>
+        <p className="font-script text-3xl text-[color:var(--gold)]">Oups…</p>
         <h1 className="mt-2 font-display text-7xl">404</h1>
         <p className="mt-3 text-sm text-muted-foreground">
           Cette page n'existe pas ou a été déplacée.
@@ -40,7 +40,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
         <div className="mt-6 flex justify-center gap-3">
           <button
             onClick={() => { router.invalidate(); reset(); }}
-            className="rounded-full bg-primary px-5 py-2.5 text-sm text-primary-foreground"
+            className="rounded-full bg-primary px-5 py-2.5 text-sm text-[color:var(--gold)]-foreground"
           >
             Réessayer
           </button>

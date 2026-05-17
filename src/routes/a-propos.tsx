@@ -96,7 +96,7 @@ function APropos() {
                     </div>
                   </div>
                   <div className="md:col-span-6">
-                    <p className="text-xs uppercase tracking-[0.3em] text-primary">{c.tag} · 0{i + 1}</p>
+                    <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--gold)]">{c.tag} · 0{i + 1}</p>
                     <h2 className="mt-3 font-display text-3xl md:text-5xl">{c.title}</h2>
                     <p className="mt-5 text-foreground/75 md:text-lg">{c.text}</p>
                   </div>
@@ -111,14 +111,14 @@ function APropos() {
       <section className="bg-accent/30 px-5 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-7xl">
           <Reveal>
-            <p className="text-xs uppercase tracking-[0.3em] text-primary">Mes valeurs</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--gold)]">Mes valeurs</p>
             <h2 className="mt-3 font-display text-4xl md:text-6xl">Quatre piliers, <span className="text-gradient-rose">un même cap</span>.</h2>
           </Reveal>
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {VALUES.map((v, i) => (
               <Reveal key={v.t} delay={i * 100}>
                 <div className="group h-full rounded-2xl border border-border bg-card p-6 transition-colors hover:border-primary">
-                  <p className="font-script text-3xl text-primary">0{i + 1}</p>
+                  <p className="font-script text-3xl text-[color:var(--gold)]">0{i + 1}</p>
                   <h3 className="mt-3 font-display text-2xl">{v.t}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{v.d}</p>
                 </div>
@@ -137,7 +137,7 @@ function APropos() {
             </div>
           </Reveal>
           <Reveal delay={120}>
-            <p className="font-script text-3xl text-primary">Mon moteur</p>
+            <p className="font-script text-3xl text-[color:var(--gold)]">Mon moteur</p>
             <blockquote className="mt-4 font-display text-3xl leading-tight md:text-5xl">
               « Militante pour des changements positifs <span className="text-[color:var(--gold)]">🌞</span> — je crois aux mots, aux gestes, aux femmes. »
             </blockquote>

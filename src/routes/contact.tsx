@@ -93,7 +93,7 @@ function Contact() {
                 <p className="mt-3 text-muted-foreground">
                   Merci pour votre message. Synnova vous répond dans les plus brefs délais.
                 </p>
-                <button onClick={() => setStatus("idle")} className="mt-6 rounded-full border border-border px-5 py-2 text-sm hover:border-primary hover:text-primary">
+                <button onClick={() => setStatus("idle")} className="mt-6 rounded-full border border-border px-5 py-2 text-sm hover:border-primary hover:text-[color:var(--gold)]">
                   Envoyer un autre message
                 </button>
               </div>
@@ -134,7 +134,7 @@ function Contact() {
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="w-full rounded-full bg-primary px-6 py-4 text-sm font-medium text-primary-foreground transition-all hover:-translate-y-0.5 hover:shadow-[0_20px_50px_-20px_color-mix(in_oklab,var(--primary)_70%,transparent)] disabled:opacity-60"
+                  className="w-full rounded-full bg-primary px-6 py-4 text-sm font-medium text-[color:var(--gold)]-foreground transition-all hover:-translate-y-0.5 hover:shadow-[0_20px_50px_-20px_color-mix(in_oklab,var(--primary)_70%,transparent)] disabled:opacity-60"
                 >
                   {status === "sending" ? "Envoi…" : "Envoyer mon message →"}
                 </button>
@@ -145,7 +145,7 @@ function Contact() {
           {/* Infos */}
           <Reveal delay={100} className="md:col-span-2">
             <div className="rounded-3xl border border-border bg-card p-6 md:p-8">
-              <p className="text-xs uppercase tracking-[0.3em] text-primary">Coordonnées</p>
+              <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--gold)]">Coordonnées</p>
               <h3 className="mt-2 font-display text-2xl">Où me trouver</h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 Grand-Popo, Bénin — disponible partout sur demande.
@@ -153,7 +153,7 @@ function Contact() {
             </div>
 
             <div className="mt-5 rounded-3xl border border-border bg-card p-6 md:p-8">
-              <p className="text-xs uppercase tracking-[0.3em] text-primary">Réseaux sociaux</p>
+              <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--gold)]">Réseaux sociaux</p>
               <h3 className="mt-2 font-display text-2xl">Suivez mon quotidien</h3>
               <ul className="mt-5 space-y-3">
                 {SOCIALS.map((s) => (
@@ -168,7 +168,7 @@ function Contact() {
                         <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground">{s.name}</p>
                         <p className="font-display text-base">{s.handle}</p>
                       </div>
-                      <span className="text-primary transition-transform group-hover:translate-x-1">↗</span>
+                      <span className="text-[color:var(--gold)] transition-transform group-hover:translate-x-1">↗</span>
                     </a>
                   </li>
                 ))}
