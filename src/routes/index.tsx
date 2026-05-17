@@ -197,7 +197,7 @@ function Home() {
       <section className="relative px-5 py-28 md:px-10 md:py-40">
         <div className="mx-auto max-w-5xl text-center">
           <Reveal>
-            <p className="font-script text-2xl text-primary">Ma signature</p>
+            <p className="font-script text-2xl text-[color:var(--gold)]">Ma signature</p>
             <blockquote className="mt-6 font-display text-[clamp(2rem,5vw,4rem)] leading-[1.05] tracking-tight text-balance">
               « Je suis une femme en chemin,
               <span className="block italic text-gradient-rose"> portée par la création, la parole </span>
@@ -278,7 +278,7 @@ function Home() {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-12 md:grid-cols-2 md:items-center">
             <Reveal>
-              <p className="text-xs uppercase tracking-[0.3em] text-primary">Moments forts</p>
+              <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--gold)]">Moments forts</p>
               <h2 className="mt-3 font-display text-4xl md:text-5xl">Des scènes, des plateaux, <span className="text-gradient-rose">une voix</span>.</h2>
               <p className="mt-5 max-w-lg text-muted-foreground">
                 Des projets concrets, des engagements durables. Voici quelques jalons qui racontent où je suis passée — et où je vais.

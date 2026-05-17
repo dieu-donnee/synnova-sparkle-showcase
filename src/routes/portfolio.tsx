@@ -83,7 +83,7 @@ function Portfolio() {
       <section className="relative px-5 pt-40 pb-12 md:px-10 md:pt-48">
         <div className="mx-auto max-w-7xl">
           <Reveal>
-            <p className="font-script text-3xl text-primary">Portfolio</p>
+            <p className="font-script text-3xl text-[color:var(--gold)]">Portfolio</p>
             <h1 className="mt-3 font-display text-[clamp(3rem,9vw,7.5rem)] leading-[0.95] tracking-tighter">
               Ce que j'ai <em className="text-gradient-rose">fait</em>.
             </h1>
@@ -105,8 +105,8 @@ function Portfolio() {
                 onClick={() => setFilter(c)}
                 className={`rounded-full border px-4 py-2 text-sm transition-all ${
                   active
-                    ? "border-primary bg-primary text-primary-foreground"
-                    : "border-border bg-card hover:border-primary hover:text-primary"
+                    ? "border-primary bg-primary text-[color:var(--gold)]-foreground"
+                    : "border-border bg-card hover:border-primary hover:text-[color:var(--gold)]"
                 }`}
               >
                 {c}
@@ -147,14 +147,14 @@ function Portfolio() {
       <section className="bg-accent/30 px-5 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-6xl">
           <Reveal>
-            <p className="text-xs uppercase tracking-[0.3em] text-primary">On en parle</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--gold)]">On en parle</p>
             <h2 className="mt-3 font-display text-4xl md:text-5xl">Quelques voix.</h2>
           </Reveal>
           <div className="mt-12 grid gap-5 md:grid-cols-3">
             {TESTIMONIALS.map((t, i) => (
               <Reveal key={t.who} delay={i * 100}>
                 <figure className="h-full rounded-2xl border border-border bg-card p-6">
-                  <span className="font-display text-5xl leading-none text-primary">"</span>
+                  <span className="font-display text-5xl leading-none text-[color:var(--gold)]">"</span>
                   <blockquote className="mt-2 text-foreground/80">{t.quote}</blockquote>
                   <figcaption className="mt-5 text-xs uppercase tracking-[0.25em] text-muted-foreground">— {t.who}</figcaption>
                 </figure>
