@@ -3,6 +3,7 @@ import {
   Outlet,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
   Link,
@@ -106,13 +107,14 @@ function RootShell({ children }: { children: React.ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
   return (
     <QueryClientProvider client={queryClient}>
       <Header />
       <main className="min-h-screen">
         <Outlet />
       </main>
-      <Footer />
+      {pathname !== "/contact" ? <Footer /> : null}
     </QueryClientProvider>
   );
 }

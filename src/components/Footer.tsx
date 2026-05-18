@@ -29,8 +29,8 @@ export function Footer() {
         </div>
 
         <h2 className="mt-6 font-display font-black uppercase leading-[0.82] tracking-[-0.04em] text-foreground text-[clamp(4.5rem,18vw,18rem)]">
-          Let's<br />
-          <span className="italic font-normal">Contact</span>
+          Restons<br />
+          <span className="italic font-normal">en contact</span>
         </h2>
 
         <Link
@@ -93,11 +93,11 @@ export function Footer() {
           <Link
             to="/contact"
             search={{ sujet: undefined }}
-            className="mt-5 inline-flex items-center gap-2 text-sm uppercase tracking-[0.25em] text-[color:var(--gold)] hover:underline"
-          >
-            Say Hello <ArrowUpRight className="h-4 w-4" />
-          </Link>
-        </div>
+          className="mt-5 inline-flex items-center gap-2 text-sm uppercase tracking-[0.25em] text-[color:var(--gold)] hover:underline"
+        >
+          Écrire un message <ArrowUpRight className="h-4 w-4" />
+        </Link>
+      </div>
       </div>
 
       {/* Bottom bar */}

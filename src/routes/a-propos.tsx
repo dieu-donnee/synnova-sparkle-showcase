@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import portrait from "@/assets/synnova-portrait-2.jpg";
-import hero from "@/assets/synnova-hero.jpg";
+import heroPortrait from "@/assets/synnova-portrait-studio-removebg-preview.png";
 import eco from "@/assets/synnova-eco.jpeg";
 import cinema from "@/assets/synnova-cinema.jpeg";
 import comm from "@/assets/synnova-comm.jpg";
@@ -14,7 +14,7 @@ export const Route = createFileRoute("/a-propos")({
       { name: "description", content: "Le parcours de Synnova Belvine Kybarance Tocloe : formation en journalisme, engagement à Grand-Popo, cinéma, entrepreneuriat éco-responsable au Bénin." },
       { property: "og:title", content: "L'histoire de Synnova Tocloe" },
       { property: "og:description", content: "Formation, engagement, cinéma, entrepreneuriat — une femme en chemin." },
-      { property: "og:image", content: portrait },
+      { property: "og:image", content: heroPortrait },
       { property: "og:url", content: "https://synnova-sparkle-showcase.lovable.app/a-propos" },
     ],
     links: [
@@ -62,21 +62,39 @@ function APropos() {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden bg-secondary px-5 pt-40 pb-24 text-secondary-foreground md:px-10 md:pt-48 md:pb-32">
-        <div className="absolute inset-0 bg-mesh-rose opacity-50" aria-hidden />
-        <div className="relative mx-auto grid max-w-7xl gap-12 md:grid-cols-12 md:items-center">
-          <div className="md:col-span-7 animate-fade-up">
-            <p className="font-script text-3xl text-[color:var(--gold)]">Mon histoire</p>
-            <h1 className="mt-3 font-display text-[clamp(2.8rem,8vw,6.5rem)] leading-[0.95] tracking-tight">
-              Une femme<br />en <em className="text-[color:var(--gold)]">chemin</em>.
-            </h1>
-            <p className="mt-6 max-w-xl text-secondary-foreground/80">
-              Je ne suis pas un CV. Je suis un parcours, fait de rencontres, de plateaux, de micros, d'ateliers et de convictions. Voici comment tout s'enchaîne — et pourquoi.
+      <section className="relative overflow-hidden bg-ink text-foreground">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,color-mix(in_oklab,var(--gold)_18%,transparent),transparent_45%),linear-gradient(135deg,color-mix(in_oklab,var(--primary)_12%,transparent),transparent_35%,color-mix(in_oklab,var(--gold)_10%,transparent))]" aria-hidden />
+        <div className="absolute inset-0 bg-mesh-rose opacity-20" aria-hidden />
+        <div className="absolute inset-0 grain opacity-25" aria-hidden />
+
+        <div className="relative mx-auto min-h-[92svh] max-w-[1600px] px-5 pb-10 pt-24 md:px-10 md:pt-28">
+          <div className="relative min-h-[calc(92svh-7rem)]">
+            <p className="pointer-events-none absolute left-1/2 top-[-0.1rem] z-10 -translate-x-1/2 text-[clamp(2.4rem,10vw,8.5rem)] font-display font-black uppercase leading-[0.85] tracking-[-0.08em] text-foreground/10 md:top-0">
+              À PROPOS
             </p>
-          </div>
-          <div className="md:col-span-5 flex md:justify-end">
-            <div className="relative mx-auto aspect-[4/5] w-full max-w-sm md:max-w-none md:w-full md:h-[min(72vh,620px)] overflow-hidden rounded-3xl shadow-2xl">
-              <img src={hero} alt="Synnova Tocloe" width={1080} height={1440} className="h-full w-full object-cover" />
+
+            <div className="pointer-events-none absolute inset-x-0 top-1/2 z-10 -translate-y-[54%] flex justify-center">
+              <div className="relative w-[min(50vw,300px)] md:w-[min(29vw,300px)]">
+                <img
+                  src={heroPortrait}
+                  alt="Synnova Tocloe"
+                  className="w-full drop-shadow-[0_40px_90px_rgba(0,0,0,0.55)]"
+                />
+              </div>
+            </div>
+
+            <div className="absolute inset-x-0 bottom-4 z-30 flex flex-wrap items-center justify-between gap-6 px-1 py-1 md:bottom-6 md:px-3">
+              <div>
+                <p className="text-2xl font-semibold tracking-[0.06em] text-foreground md:text-3xl" style={{ fontFamily: '"Cormorant Garamond", "Playfair Display", serif' }}>
+                  Synnova Tocloe
+                </p>
+                <p className="mt-1 text-sm uppercase tracking-[0.24em] text-foreground/65">
+                  Une femme en chemin
+                </p>
+              </div>
+              <p className="max-w-xs text-right text-sm leading-6 text-foreground/70">
+                Journalisme, engagement, cinéma et entrepreneuriat éco-responsable.
+              </p>
             </div>
           </div>
         </div>
@@ -91,7 +109,7 @@ function APropos() {
               <Reveal key={c.title}>
                 <article className={`grid items-center gap-10 md:grid-cols-12 md:gap-16 ${reverse ? "md:[&>div:first-child]:order-2" : ""}`}>
                   <div className="md:col-span-6">
-                    <div className="relative overflow-hidden rounded-3xl">
+                    <div className="relative mx-auto overflow-hidden rounded-3xl max-w-[70%]">
                       <img src={c.img} alt={c.title} loading="lazy" width={1024} height={1280} className="aspect-[4/5] w-full object-cover transition-transform duration-1000 hover:scale-105" />
                     </div>
                   </div>
@@ -132,7 +150,7 @@ function APropos() {
       <section className="relative px-5 py-24 md:px-10 md:py-32">
         <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2">
           <Reveal>
-            <div className="overflow-hidden rounded-3xl">
+            <div className="mx-auto overflow-hidden rounded-3xl max-w-[70%]">
               <img src={comm} alt="Synnova en communication digitale" loading="lazy" width={1024} height={1280} className="aspect-[4/5] w-full object-cover" />
             </div>
           </Reveal>

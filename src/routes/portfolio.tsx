@@ -1,26 +1,24 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
-import { Instagram, Music2, Youtube, Facebook, Linkedin, Play, ArrowUpRight } from "lucide-react";
+import { Instagram, Music2, Youtube, Facebook, Linkedin, ArrowUpRight } from "lucide-react";
 import animation from "@/assets/synnova-animation.jpg";
+import benin from "@/assets/synnova-benin.jpg";
 import comm from "@/assets/synnova-comm.jpg";
-import cinema from "@/assets/synnova-cinema.jpeg";
+import collecteKits from "@/assets/synnova-collecte-kits.webp";
+import donVillage from "@/assets/synnova-don-village.webp";
 import eco from "@/assets/synnova-eco.jpeg";
 import festival from "@/assets/synnova-festival.jpg";
+import unicef from "@/assets/synnova-unicef.jpg";
+import unicefAeroport from "@/assets/synnova-unicef-aeroport.jpg";
 import portrait from "@/assets/synnova-portrait-2.jpg";
-import hero from "@/assets/synnova-hero.jpg";
+import heroCutout from "@/assets/Ameliore_nettete_image_contraste__202605151140-removebg-preview.png";
 import grandpopo from "@/assets/synnova-grandpopo.jpeg";
 import event from "@/assets/synnova-event.jpg";
-import benin from "@/assets/synnova-benin.jpg";
-import unicef from "@/assets/synnova-unicef.jpg";
 import studio from "@/assets/synnova-studio.jpg";
-import studio2 from "@/assets/synnova-studio-2.jpg";
-import donVillage from "@/assets/synnova-don-village.webp";
 import jardin from "@/assets/synnova-jardin.jpg";
-import unicefAeroport from "@/assets/synnova-unicef-aeroport.jpg";
 import paysage from "@/assets/synnova-paysage.jpg";
 import portraitStudio from "@/assets/synnova-portrait-studio.jpg";
 import noirBlanc from "@/assets/synnova-noir-blanc.jpg";
-import collecteKits from "@/assets/synnova-collecte-kits.webp";
 import { Reveal } from "@/components/Reveal";
 
 export const Route = createFileRoute("/portfolio")({
@@ -40,53 +38,85 @@ export const Route = createFileRoute("/portfolio")({
   component: Portfolio,
 });
 
-type Cat = "Tous" | "Événements" | "Cinéma" | "Communication" | "Entrepreneuriat";
+type GalleryCategory = "Tous" | "Événements" | "Cinéma" | "Communication" | "Entrepreneuriat";
 
-const ITEMS: { img: string; cat: Exclude<Cat, "Tous">; title: string; meta: string; tall?: boolean }[] = [
-  { img: festival, cat: "Événements", title: "Festival International des Arts du Bénin", meta: "Animatrice live · Régisseuse" },
-  { img: animation, cat: "Événements", title: "Animation scène", meta: "Soirée culturelle · Grand-Popo", tall: true },
-  { img: cinema, cat: "Cinéma", title: "Salle de projection", meta: "Festival · Spectatrice & jury" },
-  { img: comm, cat: "Communication", title: "Prise de parole publique", meta: "Conférence institutionnelle", tall: true },
-  { img: eco, cat: "Entrepreneuriat", title: "Tradition & nature", meta: "Identité visuelle éco-responsable", tall: true },
-  { img: portrait, cat: "Communication", title: "Image de marque", meta: "Direction artistique perso" },
-  { img: hero, cat: "Communication", title: "Portrait éditorial", meta: "Captation studio" },
-  { img: grandpopo, cat: "Événements", title: "Journée de salubrité — UReport Grand-Popo", meta: "Mobilisation citoyenne" },
-  { img: benin, cat: "Cinéma", title: "Costume traditionnel", meta: "Captation studio · Patrimoine" },
-  { img: event, cat: "Événements", title: "Soirée de gala", meta: "Cérémonie officielle" },
-  { img: unicef, cat: "Communication", title: "Journée Mondiale de l'Enfance", meta: "UReport × UNICEF" },
-  { img: studio, cat: "Communication", title: "Studio · Profil corporate", meta: "Portrait éditorial" },
-  { img: studio2, cat: "Cinéma", title: "Studio · Pose éditoriale", meta: "Direction artistique" },
-  { img: collecteKits, cat: "Événements", title: "Collecte de kits scolaires", meta: "Grand-Popo & Adjarra Honvié", tall: true },
-  { img: donVillage, cat: "Événements", title: "Distribution aux familles", meta: "Action solidaire en village" },
-  { img: unicefAeroport, cat: "Communication", title: "UNICEF × Aéroport Cotonou", meta: "Journée Mondiale de l'Enfance" },
-  { img: portraitStudio, cat: "Communication", title: "Portrait studio · Plumes", meta: "Direction artistique éditoriale", tall: true },
-  { img: noirBlanc, cat: "Communication", title: "Portrait noir & blanc", meta: "Street style · Cotonou" },
-  { img: jardin, cat: "Communication", title: "Au jardin", meta: "Captation lifestyle" },
-  { img: paysage, cat: "Entrepreneuriat", title: "Nature & territoire", meta: "Inspiration éco-responsable" },
+const GALLERY_ITEMS: {
+  category: Exclude<GalleryCategory, "Tous">;
+  img: string;
+  title: string;
+  meta: string;
+}[] = [
+  { category: "Événements", img: festival, title: "Festival International des Arts du Bénin", meta: "Animation et présence scène" },
+  { category: "Événements", img: event, title: "Soirée de gala", meta: "Cérémonie officielle" },
+  { category: "Événements", img: grandpopo, title: "Journée citoyenne à Grand-Popo", meta: "Mobilisation locale" },
+  { category: "Événements", img: animation, title: "Animation live", meta: "Spectacle et interaction" },
+  { category: "Événements", img: collecteKits, title: "Collecte de kits scolaires", meta: "Action solidaire" },
+  { category: "Événements", img: donVillage, title: "Distribution en village", meta: "Présence de terrain" },
+  { category: "Cinéma", img: portraitStudio, title: "Portrait éditorial", meta: "Image de plateau" },
+  { category: "Cinéma", img: noirBlanc, title: "Portrait noir & blanc", meta: "Esthétique cinéma" },
+  { category: "Cinéma", img: studio, title: "Studio portrait", meta: "Direction artistique" },
+  { category: "Cinéma", img: benin, title: "Costume traditionnel", meta: "Patrimoine visuel" },
+  { category: "Communication", img: comm, title: "Prise de parole publique", meta: "Conférence et media" },
+  { category: "Communication", img: portrait, title: "Image de marque", meta: "Contenu digital" },
+  { category: "Communication", img: jardin, title: "Lifestyle éditorial", meta: "Contenu visuel" },
+  { category: "Communication", img: unicef, title: "Journée mondiale de l’enfance", meta: "Partenariat média" },
+  { category: "Communication", img: unicefAeroport, title: "UNICEF × Aéroport Cotonou", meta: "Visibilité institutionnelle" },
+  { category: "Entrepreneuriat", img: eco, title: "Création éco-responsable", meta: "Impact et territoire" },
+  { category: "Entrepreneuriat", img: paysage, title: "Nature & territoire", meta: "Ancrage béninois" },
 ];
 
-const CATEGORIES: Cat[] = ["Tous", "Événements", "Cinéma", "Communication", "Entrepreneuriat"];
-
-const SOCIAL_STATS = [
-  { name: "TikTok", icon: Music2, followers: "5.4k", views: "3.1k", er: "8.2%" },
-  { name: "Instagram", icon: Instagram, followers: "3.2k", views: "2.4k", er: "2.7%" },
-  { name: "Youtube", icon: Youtube, followers: "1.5k", views: "700", er: "4.1%" },
+const FEATURED_EVENTS = [
+  {
+    img: festival,
+    title: "Festival International des Arts du Bénin",
+    copy: "Moment clé du portfolio : présence, animation et énergie culturelle sur un événement d’envergure.",
+  },
+  {
+    img: event,
+    title: "Soirée de gala",
+    copy: "Une réalisation qui montre la capacité à tenir une scène et à représenter une image premium.",
+  },
+  {
+    img: grandpopo,
+    title: "Grand-Popo",
+    copy: "Ancrage local, actions citoyennes et productions visuelles au service du territoire.",
+  },
+  {
+    img: collecteKits,
+    title: "Collecte de kits scolaires",
+    copy: "Un temps fort de terrain qui montre l’impact social du travail mené hors des plateaux.",
+  },
 ];
 
-const VIDEOGRAPHY = [animation, comm, festival, event];
-
-const PHOTOGRAPHY_GRID = [
-  { img: portraitStudio, span: "row-span-2" },
-  { img: noirBlanc, span: "" },
-  { img: studio, span: "" },
-  { img: jardin, span: "" },
-  { img: portrait, span: "" },
-];
-
-const SERVICES = [
-  { img: animation, title: "Animation live", desc: "Animation de soirées, festivals et conférences institutionnelles." },
-  { img: comm, title: "Communication digitale", desc: "Stratégie de contenu, prises de parole et storytelling de marque." },
-  { img: eco, title: "Emballages biodégradables", desc: "Confection artisanale d'emballages éco-responsables." },
+const PRESS_MENTIONS = [
+  {
+    title: "Miss photogénique 2022",
+    source: "Triomphe Mag",
+    href: "https://triomphemag.com/benin-synnova-belvine-tocloe-couronnee-miss-photogenique-2022/",
+    img: portraitStudio,
+    copy: "Article sur la couronne Miss photogénique 2022 et la reconnaissance de son image publique.",
+  },
+  {
+    title: "Concours Je suis Photogénique",
+    source: "Kpakpato Medias",
+    href: "https://kpakpatomedias.bj/2022/03/23/deuxieme-edition-du-concours-de-beaute-feminine-en-ligne-synnova-belvine-tocloe-elue-miss/",
+    img: festival,
+    copy: "Retombée média retraçant le concours, la victoire et le profil de Synnova Belvine Tocloé.",
+  },
+  {
+    title: "Profil public LinkedIn",
+    source: "France Volontaires",
+    href: "https://fr.linkedin.com/in/synnova-belvine-kybarance-tocloe-3882a9232",
+    img: comm,
+    copy: "Profil public présentant ses compétences en animation, vidéo, marketing digital et événementiel.",
+  },
+  {
+    title: "Présentation Grand-Popo",
+    source: "Mairie des Jeunes",
+    href: "https://fr.linkedin.com/posts/mairie-des-jeunes-grand-popo-1a7047221_ucae-uac-grand-activity-6846416210012307456-iBLo",
+    img: grandpopo,
+    copy: "Mention publique de son rôle dans la communication locale et les activités associatives.",
+  },
 ];
 
 const TESTIMONIALS = [
@@ -96,189 +126,177 @@ const TESTIMONIALS = [
 ];
 
 function Portfolio() {
-  const [filter, setFilter] = useState<Cat>("Tous");
-  const list = useMemo(() => ITEMS.filter((i) => filter === "Tous" || i.cat === filter), [filter]);
+  const [filter, setFilter] = useState<GalleryCategory>("Tous");
+  const filteredGallery = useMemo(
+    () => GALLERY_ITEMS.filter((item) => filter === "Tous" || item.category === filter),
+    [filter],
+  );
 
   return (
     <>
-      {/* HERO — Massive title over portrait */}
-      <section className="relative overflow-hidden bg-accent text-accent-foreground">
-        <div className="relative mx-auto max-w-[1600px] px-5 pt-32 pb-12 md:px-10 md:pt-40 md:pb-16">
-          <div className="relative">
-            {/* Big title */}
-            <h1 className="relative z-10 font-display font-black uppercase leading-[0.8] tracking-[-0.05em] text-accent-foreground/95 text-[clamp(5rem,22vw,22rem)]">
+      {/* HERO — Front-plan cutout over editorial typography */}
+      <section className="relative overflow-hidden bg-ink text-foreground">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,color-mix(in_oklab,var(--gold)_18%,transparent),transparent_45%),linear-gradient(135deg,color-mix(in_oklab,var(--primary)_12%,transparent),transparent_35%,color-mix(in_oklab,var(--gold)_10%,transparent))]" aria-hidden />
+        <div className="absolute inset-0 bg-mesh-rose opacity-20" aria-hidden />
+        <div className="absolute inset-0 grain opacity-25" aria-hidden />
+
+        <div className="relative mx-auto min-h-[92svh] max-w-[1600px] px-5 pb-10 pt-24 md:px-10 md:pt-28">
+          <div className="relative min-h-[calc(92svh-7rem)]">
+            <p className="pointer-events-none absolute left-1/2 top-[-0.1rem] z-10 -translate-x-1/2 text-[clamp(2.4rem,10vw,8.5rem)] font-display font-black uppercase leading-[0.85] tracking-[-0.08em] text-foreground/10 md:top-0">
               Portfolio
-            </h1>
-            {/* Script overlay */}
-            <p className="pointer-events-none absolute left-1/2 top-[58%] z-20 -translate-x-1/2 whitespace-nowrap font-script text-[clamp(2.5rem,10vw,10rem)] leading-none text-[color:var(--gold)] opacity-80 md:top-[60%]">
-              Synnova
             </p>
-            {/* Portrait, centered behind */}
-            <div className="absolute left-1/2 top-0 z-[5] h-[60%] -translate-x-1/2 md:h-[78%]">
-              <img
-                src={hero}
-                alt="Synnova Tocloe — portrait"
-                className="h-full w-auto object-contain object-bottom"
-              />
-            </div>
-            {/* Top-right script tag */}
-            <p className="absolute right-0 top-0 z-20 hidden font-script text-2xl text-accent-foreground/70 md:block md:text-3xl">
-              creative woman
-            </p>
-          </div>
 
-          {/* Bottom row: name + socials */}
-          <div className="relative z-20 mt-8 flex flex-wrap items-end justify-between gap-6 md:mt-12">
-            <p className="font-display text-2xl uppercase tracking-[0.15em] md:text-3xl">
-              Synnova Tocloe
-            </p>
-            <div className="flex items-center gap-2">
-              {[
-                { Icon: Instagram, url: "https://instagram.com/_synnova" },
-                { Icon: Music2, url: "https://tiktok.com/@_synnova" },
-                { Icon: Youtube, url: "#" },
-                { Icon: Facebook, url: "https://facebook.com/synnovalumiere" },
-                { Icon: Linkedin, url: "https://bj.linkedin.com/in/synnova-belvine-kybarance-tocloe-3882a9232" },
-              ].map(({ Icon, url }, i) => (
-                <a
-                  key={i}
-                  href={url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="grid h-10 w-10 place-items-center rounded-full bg-accent-foreground text-accent transition-transform hover:scale-110"
-                >
-                  <Icon className="h-4 w-4" />
-                </a>
-              ))}
+            <div className="pointer-events-none absolute inset-x-0 top-1/2 z-10 -translate-y-[54%] flex justify-center">
+              <div className="relative w-[min(72vw,420px)] md:w-[min(42vw,420px)]">
+                <img
+                  src={heroCutout}
+                  alt="Synnova Tocloe — portrait"
+                  className="w-full drop-shadow-[0_40px_90px_rgba(0,0,0,0.55)]"
+                />
+              </div>
+            </div>
+
+            <div className="absolute inset-x-0 bottom-4 z-30 flex flex-wrap items-center justify-between gap-6 px-1 py-1 md:bottom-6 md:px-3">
+              <div>
+                <p className="text-2xl font-semibold tracking-[0.06em] text-foreground md:text-3xl" style={{ fontFamily: '"Cormorant Garamond", "Playfair Display", serif' }}>
+                  Synnova Tocloe
+                </p>
+              </div>
+              <div className="flex items-center gap-2">
+                {[
+                  { Icon: Instagram, url: "https://instagram.com/_synnova" },
+                  { Icon: Music2, url: "https://tiktok.com/@_synnova" },
+                  { Icon: Youtube, url: "#" },
+                  { Icon: Facebook, url: "https://facebook.com/synnovalumiere" },
+                  { Icon: Linkedin, url: "https://bj.linkedin.com/in/synnova-belvine-kybarance-tocloe-3882a9232" },
+                ].map(({ Icon, url }, i) => (
+                  <a
+                    key={i}
+                    href={url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/5 text-foreground transition-transform hover:scale-110 hover:bg-white/10"
+                  >
+                    <Icon className="h-4 w-4" />
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* TWO COLUMNS: Social Media Stats + Videography */}
-      <section className="px-5 py-6 md:px-10">
-        <div className="mx-auto grid max-w-[1600px] gap-6 md:grid-cols-2">
-          {/* Social stats */}
-          <Reveal>
-            <div className="relative overflow-hidden rounded-3xl bg-accent p-8 text-accent-foreground md:p-10">
-              <h2 className="font-display text-3xl font-black uppercase tracking-tight md:text-5xl">
-                Social media stats
+      {/* PORTFOLIO & GALLERY */}
+      <section className="bg-[#f3f3f3] px-5 py-16 md:px-10 md:py-24">
+        <div className="mx-auto max-w-[1600px] rounded-[2.25rem] border border-white/35 bg-white/10 px-5 py-6 shadow-[0_24px_80px_rgba(0,0,0,0.08)] backdrop-blur-2xl md:px-8 md:py-8">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <span className="inline-flex rounded-full border border-black/10 bg-white/20 px-4 py-2 text-xs text-black/70 backdrop-blur-md">
+                Portfolio & Galerie
+              </span>
+              <h2 className="mt-5 font-body text-[clamp(3rem,7vw,6.8rem)] font-medium leading-[0.92] tracking-[-0.06em] text-black">
+                Ses réalisations concrètes.
               </h2>
-              <div className="mt-8 grid grid-cols-[1fr_auto_auto_auto] items-center gap-x-6 gap-y-4 text-sm">
-                <span />
-                <span className="text-xs uppercase tracking-wider text-accent-foreground/60">Followers</span>
-                <span className="text-xs uppercase tracking-wider text-accent-foreground/60">Avg. views</span>
-                <span className="text-xs uppercase tracking-wider text-accent-foreground/60">ER</span>
-                {SOCIAL_STATS.map(({ name, icon: Icon, followers, views, er }) => (
-                  <div key={name} className="contents">
-                    <div className="flex items-center gap-2 font-medium uppercase tracking-[0.15em]">
-                      <Icon className="h-4 w-4" /> {name}
-                    </div>
-                    <span>{followers}</span>
-                    <span>{views}</span>
-                    <span>{er}</span>
-                  </div>
-                ))}
-              </div>
-              <p className="mt-6 text-[10px] italic text-accent-foreground/50">* Stats arrondies — Mai 2026</p>
-            </div>
-          </Reveal>
-
-          {/* Videography */}
-          <Reveal delay={100}>
-            <div className="relative overflow-hidden rounded-3xl bg-card p-8 md:p-10">
-              <div className="flex items-end justify-between">
-                <h2 className="font-display text-3xl font-black uppercase tracking-tight md:text-5xl">
-                  Videography
-                </h2>
-                <p className="font-script text-xl text-[color:var(--gold)] md:text-2xl">content creator</p>
-              </div>
-              <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
-                {VIDEOGRAPHY.map((src, i) => (
-                  <div key={i} className="group relative aspect-[3/4] overflow-hidden rounded-xl">
-                    <img src={src} alt="" loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                    <div className="absolute inset-0 grid place-items-center bg-black/20 transition-colors group-hover:bg-black/40">
-                      <span className="grid h-10 w-10 place-items-center rounded-full bg-foreground/90 text-background">
-                        <Play className="h-4 w-4 translate-x-0.5 fill-current" />
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* ABOUT ME + PHOTOGRAPHY */}
-      <section className="px-5 py-6 md:px-10">
-        <div className="mx-auto grid max-w-[1600px] gap-6 md:grid-cols-2">
-          {/* About me */}
-          <Reveal>
-            <div className="relative overflow-hidden rounded-3xl bg-card p-8 md:p-10">
-              <h2 className="font-display text-3xl font-black uppercase tracking-tight md:text-5xl">
-                About me
-              </h2>
-              <div className="mt-6 grid gap-6 md:grid-cols-[1fr_1.2fr] md:items-center">
-                <div className="overflow-hidden rounded-2xl">
-                  <img src={portrait} alt="Synnova portrait" className="aspect-[3/4] h-full w-full object-cover" />
-                </div>
-                <div>
-                  <p className="font-script text-2xl text-[color:var(--gold)]">animatrice & créatrice</p>
-                  <h3 className="mt-1 font-display text-3xl font-black uppercase md:text-4xl">Synnova T.</h3>
-                  <p className="mt-4 text-sm text-foreground/80">
-                    Animatrice, communicatrice et actrice basée à Grand-Popo. Je façonne des contenus
-                    qui racontent — à travers la vidéo, la photo et la prise de parole.
-                  </p>
-                  <p className="mt-3 text-sm text-foreground/70">
-                    Une démarche cohérente, ancrée dans le territoire béninois, et tournée vers l'éco-responsabilité.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-
-          {/* Photography */}
-          <Reveal delay={100}>
-            <div className="relative overflow-hidden rounded-3xl bg-card p-8 md:p-10">
-              <h2 className="font-display text-3xl font-black uppercase tracking-tight md:text-5xl">
-                Photography
-              </h2>
-              <div className="mt-6 grid grid-cols-3 gap-3" style={{ gridAutoRows: "100px" }}>
-                {PHOTOGRAPHY_GRID.map((p, i) => (
-                  <div key={i} className={`group relative overflow-hidden rounded-xl ${p.span || "row-span-1"}`}>
-                    <img src={p.img} alt="" loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                  </div>
-                ))}
-              </div>
-              <p className="mt-5 text-sm text-foreground/70">
-                Un style minimal, émotionnel — pensé pour durer.
+              <p className="mt-4 max-w-2xl text-sm leading-6 text-black/60 md:text-base">
+                Photos, événements, productions et contenus créés autour de son univers public et créatif.
               </p>
             </div>
-          </Reveal>
+            <p className="max-w-xs text-sm leading-6 text-black/60">
+              Galerie filtrable, images du Drive en grille propre et sélection pensée pour les faits marquants.
+            </p>
+          </div>
+
+          <div className="mt-8 flex flex-wrap gap-3">
+            {(["Tous", "Événements", "Cinéma", "Communication", "Entrepreneuriat"] as GalleryCategory[]).map((cat) => {
+              const active = filter === cat;
+              return (
+                <button
+                  key={cat}
+                  type="button"
+                  onClick={() => setFilter(cat)}
+                  className={`rounded-full border px-4 py-2 text-xs uppercase tracking-[0.2em] transition ${
+                    active
+                      ? "border-black/30 bg-black text-white"
+                      : "border-black/10 bg-white/20 text-black/70 hover:border-black/20 hover:bg-white/30"
+                  }`}
+                >
+                  {cat}
+                </button>
+              );
+            })}
+          </div>
+
+          <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-black/10 pt-4 text-[11px] uppercase tracking-[0.24em] text-black/40">
+            <span>{filteredGallery.length} éléments affichés</span>
+            <span>Images du Drive et réalisations triées par thème</span>
+          </div>
+
+          <div className="mt-8 columns-2 gap-3 md:columns-3 xl:columns-5 2xl:columns-6">
+            {filteredGallery.map((item) => (
+              <article
+                key={`${item.title}-${item.img}`}
+                className="mb-3 break-inside-avoid overflow-hidden rounded-[1.5rem] border border-white/20 bg-white/12 p-1.5 shadow-[0_10px_24px_rgba(0,0,0,0.05)] backdrop-blur-md"
+              >
+                <div className="overflow-hidden rounded-[1.2rem]">
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    className="aspect-[4/5] w-full object-cover transition-transform duration-700 hover:scale-[1.02]"
+                  />
+                </div>
+                <div className="px-2 pb-1 pt-2">
+                  <p className="text-xs font-semibold text-black">{item.title}</p>
+                  <p className="mt-1 text-[9px] uppercase tracking-[0.22em] text-black/40">{item.category}</p>
+                  <p className="mt-1 text-[11px] leading-5 text-black/55">{item.meta}</p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* SERVICES */}
+      {/* ÉVÉNEMENTS MARQUANTS */}
       <section className="px-5 py-6 md:px-10">
-        <div className="mx-auto max-w-[1600px]">
+        <div className="mx-auto max-w-[1450px]">
           <Reveal>
-            <div className="relative overflow-hidden rounded-3xl bg-accent p-8 text-accent-foreground md:p-12">
-              <div className="flex items-end justify-between">
-                <h2 className="font-display text-3xl font-black uppercase tracking-tight md:text-5xl">
-                  Services
-                </h2>
-                <p className="font-script text-xl text-[color:var(--gold)] md:text-2xl">ce que je propose</p>
+            <div className="rounded-3xl bg-card p-8 md:p-10">
+              <div className="flex flex-wrap items-end justify-between gap-4">
+                <div>
+                  <p className="font-script text-2xl text-[color:var(--gold)]">Événements marquants</p>
+                  <h2 className="mt-2 font-display text-3xl font-black uppercase tracking-tight md:text-5xl">
+                    Des moments qui comptent.
+                  </h2>
+                </div>
+                <p className="max-w-xs text-sm leading-6 text-foreground/65">
+                  Festival International des Arts du Bénin et autres temps forts qui structurent le portfolio.
+                </p>
               </div>
-              <div className="mt-8 divide-y divide-accent-foreground/15">
-                {SERVICES.map((s) => (
-                  <div key={s.title} className="grid grid-cols-[80px_1fr_1.5fr] items-center gap-6 py-4 md:grid-cols-[120px_1fr_2fr] md:py-6">
-                    <div className="aspect-square overflow-hidden rounded-xl">
-                      <img src={s.img} alt={s.title} className="h-full w-full object-cover" />
-                    </div>
-                    <p className="font-display text-sm font-bold uppercase tracking-[0.15em] md:text-base">{s.title}</p>
-                    <p className="text-sm text-accent-foreground/80">{s.desc}</p>
+
+              <div className="mt-8 grid gap-5 md:grid-cols-[1.3fr_1fr_1fr]">
+                <article className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 text-white shadow-[0_20px_50px_rgba(0,0,0,0.18)] backdrop-blur-2xl md:col-span-1">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,215,120,0.72),transparent_35%),radial-gradient(circle_at_78%_72%,rgba(255,196,52,0.40),transparent_42%),radial-gradient(circle_at_50%_50%,rgba(255,223,114,0.18),transparent_55%)] blur-3xl opacity-95" aria-hidden />
+                  <div className="relative aspect-[4/5] overflow-hidden">
+                    <img src={FEATURED_EVENTS[0].img} alt={FEATURED_EVENTS[0].title} className="h-full w-full object-cover" />
                   </div>
+                  <div className="relative p-5">
+                    <p className="text-xs uppercase tracking-[0.24em] text-white/70">Festival</p>
+                    <h3 className="mt-2 font-display text-2xl text-white">{FEATURED_EVENTS[0].title}</h3>
+                    <p className="mt-3 text-sm leading-6 text-white/80">{FEATURED_EVENTS[0].copy}</p>
+                  </div>
+                </article>
+
+                {FEATURED_EVENTS.slice(1).map((eventItem) => (
+                  <article key={eventItem.title} className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-2 text-white shadow-[0_20px_50px_rgba(0,0,0,0.14)] backdrop-blur-2xl">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_35%_18%,rgba(255,215,120,0.62),transparent_38%),radial-gradient(circle_at_75%_80%,rgba(255,196,52,0.34),transparent_44%),radial-gradient(circle_at_50%_50%,rgba(255,223,114,0.14),transparent_58%)] blur-3xl opacity-95" aria-hidden />
+                    <div className="relative overflow-hidden rounded-[1.25rem]">
+                      <img src={eventItem.img} alt={eventItem.title} className="aspect-[4/5] h-full w-full object-cover" />
+                    </div>
+                    <div className="relative p-4">
+                      <p className="text-xs uppercase tracking-[0.24em] text-white/65">Événement</p>
+                      <h3 className="mt-2 font-display text-xl text-white">{eventItem.title}</h3>
+                      <p className="mt-3 text-sm leading-6 text-white/78">{eventItem.copy}</p>
+                    </div>
+                  </article>
                 ))}
               </div>
             </div>
@@ -286,58 +304,49 @@ function Portfolio() {
         </div>
       </section>
 
-      {/* TOP-PERFORMING / GALLERY FILTER */}
-      <section className="px-5 py-12 md:px-10 md:py-16">
+      {/* PRESSE & MENTIONS */}
+      <section className="px-5 py-3 md:px-10 md:py-4">
         <div className="mx-auto max-w-[1600px]">
-          <Reveal>
-            <div className="flex flex-wrap items-end justify-between gap-4">
-              <div>
-                <p className="font-script text-2xl text-[color:var(--gold)]">galerie complète</p>
-                <h2 className="mt-1 font-display text-3xl font-black uppercase tracking-tight md:text-5xl">
-                  Tous les projets
-                </h2>
+          <Reveal delay={100}>
+            <div className="rounded-3xl bg-accent p-4 text-accent-foreground md:p-6">
+              <div className="flex flex-wrap items-end justify-between gap-3">
+                <div>
+                  <p className="font-script text-lg text-white md:text-xl">Presse & Mentions</p>
+                  <h2 className="mt-1.5 font-display text-xl font-black uppercase tracking-tight md:text-3xl">
+                    Résonance média.
+                  </h2>
+                </div>
               </div>
-              <div className="flex flex-wrap gap-2">
-                {CATEGORIES.map((c) => {
-                  const active = filter === c;
-                  return (
-                    <button
-                      key={c}
-                      onClick={() => setFilter(c)}
-                      className={`rounded-full border px-4 py-2 text-xs uppercase tracking-[0.2em] transition-all ${
-                        active
-                          ? "border-primary bg-primary text-primary-foreground"
-                          : "border-border bg-card hover:border-[color:var(--gold)] hover:text-[color:var(--gold)]"
-                      }`}
-                    >
-                      {c}
-                    </button>
-                  );
-                })}
+
+              <div className="mt-4 grid gap-x-1.5 gap-y-2 sm:grid-cols-2">
+                {PRESS_MENTIONS.map((item) => (
+                  <article key={item.title} className="w-full overflow-hidden rounded-[1rem] border border-white/10 bg-black/18 p-[4px] shadow-[0_10px_20px_rgba(0,0,0,0.1)] backdrop-blur-xl">
+                    <div className="flex h-[min(80vh,420px)] items-center justify-center overflow-hidden rounded-[0.8rem] bg-black/10">
+                      <img
+                        src={item.img}
+                        alt={item.title}
+                        className={`h-full w-full ${item.title === "Miss photogénique 2022" ? "object-cover" : "object-contain p-2"}`}
+                      />
+                    </div>
+                    <div className="p-[5px]">
+                      <p className="text-[8px] uppercase tracking-[0.28em] text-white/45">{item.source}</p>
+                      <h3 className="mt-1 font-display text-sm text-white md:text-base">{item.title}</h3>
+                      <p className="mt-1 text-[10px] leading-4 text-white/70">{item.copy}</p>
+                      <a
+                        href={item.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mt-2 inline-flex items-center gap-2 rounded-full bg-black px-3 py-1.5 text-[9px] uppercase tracking-[0.22em] text-white transition hover:translate-y-[-1px] hover:bg-black/85"
+                      >
+                        Voir la source
+                        <ArrowUpRight className="h-3 w-3" />
+                      </a>
+                    </div>
+                  </article>
+                ))}
               </div>
             </div>
           </Reveal>
-
-          <div className="mt-10 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-5 lg:grid-cols-4">
-            {list.map((item, i) => (
-              <Reveal
-                key={`${filter}-${item.title}-${i}`}
-                delay={(i % 6) * 60}
-                className={`group relative overflow-hidden rounded-2xl bg-card ${item.tall ? "row-span-2 aspect-[3/5]" : "aspect-[4/5]"}`}
-              >
-                <img src={item.img} alt={item.title} loading="lazy" width={1024} height={1280} className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/30 to-transparent opacity-80 transition-opacity group-hover:opacity-100" />
-                <div className="absolute inset-x-0 bottom-0 p-4 text-foreground">
-                  <p className="text-[10px] uppercase tracking-[0.25em] text-[color:var(--gold)]">{item.cat}</p>
-                  <h3 className="mt-1 font-display text-lg leading-tight">{item.title}</h3>
-                  <p className="text-xs text-foreground/70">{item.meta}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-          {list.length === 0 && (
-            <p className="py-20 text-center text-muted-foreground">Bientôt d'autres projets ici…</p>
-          )}
         </div>
       </section>
 

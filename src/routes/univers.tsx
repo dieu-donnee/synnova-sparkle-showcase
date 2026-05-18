@@ -1,10 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { Facebook, Instagram, Linkedin, Music2, Youtube } from "lucide-react";
 import animation from "@/assets/synnova-animation.jpg";
-import comm from "@/assets/synnova-comm.jpg";
 import cinema from "@/assets/synnova-cinema.jpeg";
+import comm from "@/assets/synnova-comm.jpg";
 import eco from "@/assets/synnova-eco.jpeg";
 import festival from "@/assets/synnova-festival.jpg";
 import portrait from "@/assets/synnova-portrait-2.jpg";
+import heroPerson from "@/assets/b.png";
 import { Reveal } from "@/components/Reveal";
 
 export const Route = createFileRoute("/univers")({
@@ -14,7 +16,7 @@ export const Route = createFileRoute("/univers")({
       { name: "description", content: "Découvrez les univers de Synnova Tocloe : animation live, communication digitale, cinéma et régie plateau, entrepreneuriat éco-responsable au Bénin." },
       { property: "og:title", content: "Mes univers — Synnova Tocloe" },
       { property: "og:description", content: "Quatre mondes, une même énergie." },
-      { property: "og:image", content: animation },
+      { property: "og:image", content: heroPerson },
       { property: "og:url", content: "https://synnova-sparkle-showcase.lovable.app/univers" },
     ],
     links: [
@@ -75,28 +77,53 @@ function Univers() {
   return (
     <>
       {/* HERO */}
-      <section className="relative px-5 pt-40 pb-16 md:px-10 md:pt-48 md:pb-24">
-        <div className="mx-auto max-w-7xl">
-          <Reveal>
-            <p className="font-script text-3xl text-[color:var(--gold)]">Ce que je fais</p>
-            <h1 className="mt-3 font-display text-[clamp(3rem,9vw,7.5rem)] leading-[0.95] tracking-tighter">
-              Quatre <em className="text-gradient-rose">univers</em>.
-            </h1>
-            <p className="mt-5 max-w-2xl text-lg text-muted-foreground">
-              Chaque monde est un terrain de jeu et d'engagement. Choisissez celui qui vous parle — ou explorez-les tous.
-            </p>
-          </Reveal>
+      <section className="relative overflow-hidden bg-ink text-foreground">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,color-mix(in_oklab,var(--gold)_18%,transparent),transparent_45%),linear-gradient(135deg,color-mix(in_oklab,var(--primary)_12%,transparent),transparent_35%,color-mix(in_oklab,var(--gold)_10%,transparent))]" aria-hidden />
+        <div className="absolute inset-0 bg-mesh-rose opacity-20" aria-hidden />
+        <div className="absolute inset-0 grain opacity-25" aria-hidden />
 
-          <div className="mt-10 flex flex-wrap gap-3">
-            {UNIVERSES.map((u) => (
-              <a
-                key={u.id}
-                href={`#${u.id}`}
-                className="rounded-full border border-border bg-card px-4 py-2 text-sm transition-colors hover:border-primary hover:text-[color:var(--gold)]"
-              >
-                {u.n} · {u.title}
-              </a>
-            ))}
+        <div className="relative mx-auto min-h-[92svh] max-w-[1600px] px-5 pb-10 pt-24 md:px-10 md:pt-28">
+          <div className="relative min-h-[calc(92svh-7rem)]">
+            <p className="pointer-events-none absolute left-1/2 top-[-0.1rem] z-10 -translate-x-1/2 text-[clamp(2.4rem,10vw,8.5rem)] font-display font-black uppercase leading-[0.85] tracking-[-0.08em] text-foreground/10 md:top-0">
+              MES UNIVERS
+            </p>
+
+            <div className="pointer-events-none absolute inset-x-0 top-1/2 z-10 -translate-y-[54%] flex justify-center">
+              <div className="relative w-[min(72vw,420px)] md:w-[min(42vw,420px)]">
+                <img
+                  src={heroPerson}
+                  alt="Synnova Tocloe"
+                  className="w-full drop-shadow-[0_40px_90px_rgba(0,0,0,0.55)]"
+                />
+              </div>
+            </div>
+
+            <div className="absolute inset-x-0 bottom-4 z-30 flex flex-wrap items-center justify-between gap-6 px-1 py-1 md:bottom-6 md:px-3">
+              <div>
+                <p className="text-2xl font-semibold tracking-[0.06em] text-foreground md:text-3xl" style={{ fontFamily: '"Cormorant Garamond", "Playfair Display", serif' }}>
+                  Synnova Tocloe
+                </p>
+              </div>
+              <div className="flex items-center gap-2">
+                {[
+                  { Icon: Instagram, url: "https://instagram.com/_synnova" },
+                  { Icon: Music2, url: "https://tiktok.com/@_synnova" },
+                  { Icon: Youtube, url: "#" },
+                  { Icon: Facebook, url: "https://facebook.com/synnovalumiere" },
+                  { Icon: Linkedin, url: "https://bj.linkedin.com/in/synnova-belvine-kybarance-tocloe-3882a9232" },
+                ].map(({ Icon, url }, i) => (
+                  <a
+                    key={i}
+                    href={url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/5 text-foreground transition-transform duration-500 hover:scale-110 hover:bg-white/10"
+                  >
+                    <Icon className="h-4 w-4" />
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -145,7 +172,7 @@ function Univers() {
                 <Reveal className="md:col-span-6">
                   <div className="relative">
                     <div
-                      className="overflow-hidden rounded-[2rem] shadow-xl"
+                      className="mx-auto max-w-[70%] overflow-hidden rounded-[2rem] shadow-xl"
                       style={u.color === "eco" ? { boxShadow: "0 30px 60px -20px color-mix(in oklab, var(--eco) 45%, transparent)" } : undefined}
                     >
                       <img src={u.img} alt={u.title} loading="lazy" width={1024} height={1280} className="aspect-[4/5] w-full object-cover transition-transform duration-1000 hover:scale-105" />
@@ -192,7 +219,7 @@ function Univers() {
       <section className="px-5 pb-24 md:px-10">
         <div className="mx-auto grid max-w-7xl gap-3 sm:grid-cols-3">
           {[festival, portrait, cinema].map((img, i) => (
-            <Reveal key={i} delay={i * 100} className="overflow-hidden rounded-2xl">
+            <Reveal key={i} delay={i * 100} className="mx-auto max-w-[70%] overflow-hidden rounded-2xl">
               <img src={img} alt="" loading="lazy" width={1280} height={960} className="aspect-[4/5] w-full object-cover transition-transform duration-700 hover:scale-105" />
             </Reveal>
           ))}
