@@ -183,7 +183,7 @@ function Contact() {
                         <textarea
                           id="message"
                           name="message"
-                          rows={5}
+                          rows={3}
                           placeholder="Parlez-moi de votre projet…"
                           className="mt-1.5 w-full resize-none rounded-xl border border-black/10 bg-[#fafafa] px-3 py-2 text-sm text-black outline-none transition-colors focus:border-black/25"
                         />
