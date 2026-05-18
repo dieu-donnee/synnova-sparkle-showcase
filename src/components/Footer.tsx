@@ -12,41 +12,10 @@ export function Footer() {
 
   return (
     <footer className="relative mt-32 overflow-hidden bg-ink text-foreground">
-      {/* Massive headline */}
-      <div className="mx-auto max-w-[1600px] px-5 pt-20 md:px-10 md:pt-28">
-        <div className="flex items-start justify-between gap-6">
-          <p className="font-script text-2xl text-[color:var(--gold)] md:text-3xl">
-            Travaillons ensemble
-          </p>
-          <button
-            onClick={scrollTop}
-            aria-label="Retour en haut"
-            className="group hidden items-center gap-2 text-xs uppercase tracking-[0.3em] text-foreground/60 transition-colors hover:text-[color:var(--gold)] md:inline-flex"
-          >
-            <span>Go back to top</span>
-            <ArrowUp className="h-4 w-4 transition-transform group-hover:-translate-y-0.5" />
-          </button>
-        </div>
-
-        <h2 className="mt-6 font-display font-black uppercase leading-[0.82] tracking-[-0.04em] text-foreground text-[clamp(4.5rem,18vw,18rem)]">
-          Restons<br />
-          <span className="italic font-normal">en contact</span>
-        </h2>
-
-        <Link
-          to="/contact"
-          search={{ sujet: undefined }}
-          className="group mt-10 inline-flex items-center gap-3 border-b border-foreground/30 pb-2 text-sm uppercase tracking-[0.3em] text-foreground transition-colors hover:border-[color:var(--gold)] hover:text-[color:var(--gold)]"
-        >
-          <span>Démarrer une conversation</span>
-          <ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-        </Link>
+      <div className="mx-auto max-w-[1600px] px-5 pt-14 md:px-10 md:pt-20">
+        <div className="h-px w-full bg-foreground/15" />
       </div>
 
-      {/* Divider */}
-      <div className="mt-20 h-px w-full bg-foreground/15" />
-
-      {/* Columns */}
       <div className="mx-auto grid max-w-[1600px] gap-12 px-5 py-14 md:grid-cols-12 md:px-10">
         <div className="md:col-span-4">
           <p className="font-script text-3xl text-[color:var(--gold)]">Synnova</p>
@@ -93,11 +62,11 @@ export function Footer() {
           <Link
             to="/contact"
             search={{ sujet: undefined }}
-          className="mt-5 inline-flex items-center gap-2 text-sm uppercase tracking-[0.25em] text-[color:var(--gold)] hover:underline"
-        >
-          Écrire un message <ArrowUpRight className="h-4 w-4" />
-        </Link>
-      </div>
+            className="mt-5 inline-flex items-center gap-2 text-sm uppercase tracking-[0.25em] text-[color:var(--gold)] hover:underline"
+          >
+            Écrire un message <ArrowUpRight className="h-4 w-4" />
+          </Link>
+        </div>
       </div>
 
       {/* Bottom bar */}

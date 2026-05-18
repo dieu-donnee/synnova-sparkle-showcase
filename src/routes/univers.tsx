@@ -84,7 +84,7 @@ function Univers() {
 
         <div className="relative mx-auto min-h-[92svh] max-w-[1600px] px-5 pb-10 pt-24 md:px-10 md:pt-28">
           <div className="relative min-h-[calc(92svh-7rem)]">
-            <p className="pointer-events-none absolute left-1/2 top-[-0.1rem] z-10 -translate-x-1/2 text-[clamp(2.4rem,10vw,8.5rem)] font-display font-black uppercase leading-[0.85] tracking-[-0.08em] text-foreground/10 md:top-0">
+            <p className="pointer-events-none absolute left-1/2 top-[-0.1rem] z-10 -translate-x-1/2 whitespace-nowrap text-[clamp(2.4rem,10vw,8.5rem)] font-display font-black uppercase leading-[0.85] tracking-[-0.08em] text-foreground/10 md:top-0">
               MES UNIVERS
             </p>
 
@@ -100,7 +100,7 @@ function Univers() {
 
             <div className="absolute inset-x-0 bottom-4 z-30 flex flex-wrap items-center justify-between gap-6 px-1 py-1 md:bottom-6 md:px-3">
               <div>
-                <p className="text-2xl font-semibold tracking-[0.06em] text-foreground md:text-3xl" style={{ fontFamily: '"Cormorant Garamond", "Playfair Display", serif' }}>
+                <p className="whitespace-nowrap text-2xl font-semibold tracking-[0.06em] text-foreground md:text-3xl" style={{ fontFamily: '"Cormorant Garamond", "Playfair Display", serif' }}>
                   Synnova Tocloe
                 </p>
               </div>
