@@ -97,17 +97,17 @@ function Contact() {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden bg-[#06104a] px-5 pt-22 pb-14 text-white md:px-10 md:pt-24 md:pb-18">
+      <section className="relative overflow-hidden bg-[#06104a] px-5 pt-20 pb-8 text-white md:px-10 md:pt-20 md:pb-10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,color-mix(in_oklab,var(--primary)_18%,transparent),transparent_42%),radial-gradient(circle_at_20%_30%,rgba(255,255,255,0.14),transparent_25%),radial-gradient(circle_at_80%_65%,rgba(255,255,255,0.08),transparent_20%)]" aria-hidden />
         <div className="absolute inset-0 opacity-35 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),transparent_18%,transparent_80%,rgba(255,255,255,0.04))]" aria-hidden />
 
-        <div className="relative mx-auto flex min-h-[24svh] max-w-4xl flex-col items-center justify-center text-center">
+        <div className="relative mx-auto flex max-w-4xl flex-col items-center justify-center text-center">
           <Reveal>
-            <p className="text-sm uppercase tracking-[0.3em] text-white/75">Contact</p>
-            <h1 className="mt-2.5 font-display text-[clamp(2.4rem,6.4vw,4.8rem)] leading-[0.92] tracking-[-0.06em] text-white">
+            <p className="text-xs uppercase tracking-[0.3em] text-white/75">Contact</p>
+            <h1 className="mt-2 font-display text-[clamp(1.9rem,4.8vw,3.4rem)] leading-[0.95] tracking-[-0.05em] text-white">
               Restons en contact
             </h1>
-            <p className="mt-3 max-w-lg text-sm leading-6 text-white/68 md:text-[1rem]">
+            <p className="mt-2 max-w-lg text-xs leading-5 text-white/68 md:text-sm">
               Animation, cinéma, communication digitale ou projets éco-responsables. Dites-moi ce que vous construisez.
             </p>
           </Reveal>
@@ -183,7 +183,7 @@ function Contact() {
                         <textarea
                           id="message"
                           name="message"
-                          rows={5}
+                          rows={3}
                           placeholder="Parlez-moi de votre projet…"
                           className="mt-1.5 w-full resize-none rounded-xl border border-black/10 bg-[#fafafa] px-3 py-2 text-sm text-black outline-none transition-colors focus:border-black/25"
                         />

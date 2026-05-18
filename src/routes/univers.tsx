@@ -178,8 +178,8 @@ function Univers() {
                       <img src={u.img} alt={u.title} loading="lazy" width={1024} height={1280} className="aspect-[4/5] w-full object-cover transition-transform duration-1000 hover:scale-105" />
                     </div>
                     <span
-                      className="absolute -top-6 left-6 rounded-full px-4 py-1.5 text-xs uppercase tracking-[0.25em] text-background"
-                      style={{ background: accentVar }}
+                      className="absolute -top-6 left-6 rounded-full px-4 py-1.5 text-xs uppercase tracking-[0.25em]"
+                      style={{ background: accentVar, color: "#FAFAFA" }}
                     >
                       Univers {u.n}
                     </span>
@@ -203,8 +203,8 @@ function Univers() {
                   <Link
                     to="/contact"
                     search={{ sujet: u.id }}
-                    className="mt-8 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-background transition-transform hover:-translate-y-0.5"
-                    style={{ background: accentVar }}
+                    className="mt-8 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-transform hover:-translate-y-0.5"
+                    style={{ background: accentVar, color: "#FAFAFA" }}
                   >
                     {u.cta} →
                   </Link>

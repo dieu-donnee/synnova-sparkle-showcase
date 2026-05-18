@@ -1,6 +1,0 @@
-{
-  "name": "whatwg-encoding",
-  "version": "3.1.1",
-  "private": true,
-  "main": "index.js"
-}
