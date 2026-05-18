@@ -178,8 +178,8 @@ function Univers() {
                       <img src={u.img} alt={u.title} loading="lazy" width={1024} height={1280} className="aspect-[4/5] w-full object-cover transition-transform duration-1000 hover:scale-105" />
                     </div>
                     <span
-                      className="absolute -top-6 left-6 rounded-full px-4 py-1.5 text-xs uppercase tracking-[0.25em] text-background"
-                      style={{ background: accentVar }}
+                      className="absolute -top-6 left-6 rounded-full px-4 py-1.5 text-xs uppercase tracking-[0.25em]"
+                      style={{ background: accentVar, color: "#FAFAFA" }}
                     >
                       Univers {u.n}
                     </span>
